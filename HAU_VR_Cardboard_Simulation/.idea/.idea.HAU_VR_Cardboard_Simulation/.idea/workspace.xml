@@ -1,19 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eec98bda-c075-4af3-b28c-2caa50ce7ba9" name="Default Changelist" comment="" />
+    <list default="true" id="eec98bda-c075-4af3-b28c-2caa50ce7ba9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Manager.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/AppPreferences.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/AppPreferences.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller/IPointerAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller/IPointerAction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller/Teleport.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller/Teleport.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCameraPointer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCameraPointer.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VR.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VR/VREditorEmulator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VR/VREditorEmulator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VR/VRModeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/VR/VRModeController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HAU_VR_Cardboard_Simulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HAU_VR_Cardboard_Simulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/CubeRoom.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/CubeRoom.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/CubeRoom.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/CubeRoom.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/CubeRoom_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/CubeRoom_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/Materials/CubeRoomEnvMat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Environments/Materials/CubeRoomEnvMat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Icosahedron.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Icosahedron.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/IcosahedronBlue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/IcosahedronBlue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/IcosahedronPink.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/IcosahedronPink.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/QuadSphereBlue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/QuadSphereBlue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/QuadSpherePink.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/QuadSpherePink.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/TriSphereBlue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/TriSphereBlue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/TriSpherePink.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/Materials/TriSpherePink.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/QuadSphere.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/QuadSphere.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/TriSphere.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Models/TriSphere.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes/HelloCardboard.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes/HelloCardboard.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes/VrMode.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scenes/VrMode.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/CameraPointer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/CameraPointer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/CardboardStartup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/CardboardStartup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/ObjectController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/ObjectController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/VrModeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Scripts/VrModeController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/Icosahedron_Blue_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/Icosahedron_Blue_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/Icosahedron_Pink_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/Icosahedron_Pink_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/QuadSphere_Blue_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/QuadSphere_Blue_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/QuadSphere_Pink_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/QuadSphere_Pink_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/TriSphere_Blue_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/TriSphere_Blue_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/TriSphere_Pink_BakedDiffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Google Cardboard XR Plugin for Unity/1.17.0/Hello Cardboard/Textures/TriSphere_Pink_BakedDiffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/gradleTemplate.properties" />
+      <option value="$PROJECT_DIR$/Assets/Sun Package/SunUIController/SunBaseUIController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/GamePreferences.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/AppPreferences.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/IPointerAction.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TestObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VRCameraPointer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VRModeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VR/PlayerCameraPointer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VREditorEmulator.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCameraPointer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportCotroller.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Sun Package/SunEventManager/SunEventManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/Teleport.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FXjBnORWlGqflQifqzI6HQMmNA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,7 +140,9 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -47,8 +167,36 @@
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eec98bda-c075-4af3-b28c-2caa50ce7ba9" name="Default Changelist" comment="" />
+      <created>1665973527048</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665973527048</updated>
+      <workItem from="1665973551392" duration="636000" />
+      <workItem from="1665990302055" duration="94000" />
+      <workItem from="1665990563861" duration="26848000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
