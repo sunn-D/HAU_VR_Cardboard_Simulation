@@ -13,7 +13,18 @@ namespace Player
         //
         [FoldoutGroup("Variables/Pointer")]
         public Image pointProcessImage;
+        //
+        [FoldoutGroup("Variables/Movement configs")]
+        public float toggleAngle = 30f;
+        [FoldoutGroup("Variables/Movement configs")]
+        public float speed = 3f;
+        [FoldoutGroup("Variables/Movement configs")]
+        public Transform cameraPlayer;
 
+        //
+        private CharacterController _characterController;
+        private bool moveForward;
+        
         #endregion
 
         #region Functions
@@ -28,8 +39,12 @@ namespace Player
         //
         private void Initialize()
         {
+            //
             pointProcessImage.fillAmount = 0f;
             pointProcessImage.gameObject.SetActive(false);
+            
+            //
+            _characterController = GetComponent<CharacterController>();
         }
         
         //
@@ -42,6 +57,25 @@ namespace Player
             
             //
             SunEventManager.StartListening(EventID.OnTeleport, OnTeleport);
+        }
+        
+        //
+        private void Update()
+        {
+            if (cameraPlayer.eulerAngles.x >= toggleAngle && cameraPlayer.eulerAngles.x < 90f)
+            {
+                moveForward = true;
+            }
+            else
+            {
+                moveForward = false;
+            }
+            
+            if (moveForward)
+            {
+                var forward = cameraPlayer.TransformDirection(Vector3.forward);
+                _characterController.SimpleMove(forward * speed);
+            }
         }
 
         #endregion

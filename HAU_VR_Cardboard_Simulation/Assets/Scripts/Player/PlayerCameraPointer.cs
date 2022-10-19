@@ -1,5 +1,4 @@
 ﻿using DunnGSunn;
-using Object_Controller;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -40,6 +39,10 @@ namespace Player
             if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, maxDistanceRay, layerMaskRay))
             {
                 if (_gazeAtObject != _raycastHit.transform.gameObject)
+                {
+                    _gazeAtObject = _raycastHit.transform.gameObject;
+                }
+                else
                 {
                     if (!_gazerStatus)
                     {
