@@ -8,15 +8,30 @@ namespace Manager
     public static class SceneLoader
     {
         // Scene name
-        public static string MenuScene = "SampleScene";
+        public static string LoadingScene = "Loading Scene";
+        public static string MainScene = "Main Scene";
+        
+        //
+        public static IEnumerator UnloadFirstLoadingScene(Action onStartUnloading = null, Action<float> onUnloading = null, Action onFinishUnloading = null)
+        {
+            onStartUnloading?.Invoke();
+            var async = UnloadSceneAsync(LoadingScene);
+
+            while (!async.isDone)
+            {
+                var progress = Mathf.Clamp01(async.progress / .9f);
+                onUnloading?.Invoke(progress);
+                yield return null;
+            }
+
+            onFinishUnloading?.Invoke();
+        }
         
         //
         public static IEnumerator LoadMainScene(Action onStartLoading = null, Action<float> onLoading = null, Action onFinishLoading = null)
         {
-            yield return new WaitForSeconds(15f);
-            
             onStartLoading?.Invoke();
-            var async = LoadSceneAsyncSingle(MenuScene);
+            var async = LoadSceneAsyncAdditive(MainScene);
 
             while (!async.isDone)
             {

@@ -17,6 +17,10 @@ namespace DunnGSunn
         //
         public static string OnTeleport = "OnTeleportEnter";
         public static string OnTeleportPointerClick = "OnTeleportPointerClick";
+        
+        //
+        public static string ScreenFadedIn = "ScreenFadedIn";
+        public static string ScreenFadedOut = "ScreenFadedOut";
     }
 
     public static class SunEventManager

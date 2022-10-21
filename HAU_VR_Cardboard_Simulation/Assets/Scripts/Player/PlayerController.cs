@@ -20,6 +20,9 @@ namespace Player
         public float speed = 3f;
         [FoldoutGroup("Variables/Movement configs")]
         public Transform cameraPlayer;
+        //
+        [FoldoutGroup("Variables/Faded")] 
+        public SmoothFaded smoothFaded;
 
         //
         private CharacterController _characterController;
@@ -57,8 +60,12 @@ namespace Player
             
             //
             SunEventManager.StartListening(EventID.OnTeleport, OnTeleport);
+            
+            //
+            SunEventManager.StartListening(EventID.ScreenFadedIn, ScreenFadedIn);
+            SunEventManager.StartListening(EventID.ScreenFadedOut, ScreenFadedOut);
         }
-        
+
         //
         private void Update()
         {
@@ -107,6 +114,18 @@ namespace Player
         {
             var newPosition = (Vector3) SunEventManager.GetSender(EventID.OnTeleport);
             transform.position = newPosition;
+        }
+        
+        //
+        private void ScreenFadedOut()
+        {
+            smoothFaded.FadeOut();
+        }
+
+        //
+        private void ScreenFadedIn()
+        {
+            smoothFaded.FadeIn();
         }
 
         #endregion
