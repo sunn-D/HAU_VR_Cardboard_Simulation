@@ -969,6 +969,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/SmoothFaded.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIFirstLoading.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/SceneLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIHome.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UISetting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UICredit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/asd.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/UIBaseButton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIFirstLoading.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonPlay.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIHome.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIMap.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UISetting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UICredit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonMap.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonSetting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonBack.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonCredit.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FXjBnORWlGqflQifqzI6HQMmNA" />

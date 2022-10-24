@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI_Controller
+namespace UI_Controller.Elements
 {
     public abstract class UIBaseButton : MonoBehaviour, IPointerAction
     {

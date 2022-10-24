@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI_Controller
+namespace UI_Controller.UI
 {
     public class UIFirstLoading : SunBaseUI
     {
@@ -90,6 +90,5 @@ namespace UI_Controller
         }
 
         #endregion
-        
     }
 }
