@@ -23,6 +23,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Hop_Tile_Skygo/Music Game/Assets/Scripts/Manager/GamePref.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -30,7 +31,6 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/gradleTemplate.properties" />
       <option value="$PROJECT_DIR$/Assets/Sun Package/SunUIController/SunBaseUIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/GamePreferences.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/AppPreferences.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/IPointerAction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TestObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/VR/VRCameraPointer.cs" />
@@ -45,16 +45,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/ButtonPlay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/Teleport.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIBaseButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCameraPointer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerLookWalk.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/FirstLoading.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/MainCoroutineThread.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/SmoothFaded.cs" />
-      <option value="$PROJECT_DIR$/Assets/Sun Package/SunEventManager/SunEventManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/SmoothFaded.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIFirstLoading.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/SceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIHome.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UISetting.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UICredit.cs" />
@@ -62,14 +58,19 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/UIBaseButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIFirstLoading.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonPlay.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIMap.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UISetting.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UICredit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonMap.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonSetting.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonBack.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonCredit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIHome.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIMap.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UISetting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UICredit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCameraPointer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Sun Package/SunEventManager/SunEventManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/AppPreferences.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Manager/SceneLoader.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FXjBnORWlGqflQifqzI6HQMmNA" />

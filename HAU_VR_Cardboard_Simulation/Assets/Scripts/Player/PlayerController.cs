@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 namespace Player
 {
+    public enum MovementStyle
+    {
+        Teleport = 1,
+        HeadDown = 2
+    }
+    
     public class PlayerController : MonoBehaviour
     {
         #region Variables

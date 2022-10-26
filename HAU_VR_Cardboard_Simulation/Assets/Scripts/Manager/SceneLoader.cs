@@ -8,9 +8,9 @@ namespace Manager
     public static class SceneLoader
     {
         // Scene name
-        public static string LoadingScene = "Loading Scene";
-        public static string MainScene = "Main Scene";
-        
+        private const string LoadingScene = "Loading Scene";
+        private const string MainScene = "Main Scene";
+
         //
         public static IEnumerator UnloadFirstLoadingScene(Action onStartUnloading = null, Action<float> onUnloading = null, Action onFinishUnloading = null)
         {

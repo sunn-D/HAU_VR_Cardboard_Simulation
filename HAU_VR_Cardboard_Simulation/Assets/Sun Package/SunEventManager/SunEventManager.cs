@@ -10,17 +10,20 @@ namespace DunnGSunn
     public static class EventID
     {
         //
-        public static string OnGazerTimerStart = "OnGazerTimerStart";
-        public static string OnGazerTimerProcess = "OnGazerTimerProcess";
-        public static string OnGazerTimerFinish = "OnGazerTimerFinish";
-        
+        public const string OnGazerTimerStart = "OnGazerTimerStart";
+        public const string OnGazerTimerProcess = "OnGazerTimerProcess";
+        public const string OnGazerTimerFinish = "OnGazerTimerFinish";
+
         //
-        public static string OnTeleport = "OnTeleportEnter";
-        public static string OnTeleportPointerClick = "OnTeleportPointerClick";
-        
+        public const string OnTeleport = "OnTeleportEnter";
+        public const string OnTeleportPointerClick = "OnTeleportPointerClick";
+
         //
-        public static string ScreenFadedIn = "ScreenFadedIn";
-        public static string ScreenFadedOut = "ScreenFadedOut";
+        public const string ScreenFadedIn = "ScreenFadedIn";
+        public const string ScreenFadedOut = "ScreenFadedOut";
+
+        //
+        public const string OnMovementStyleChange = "OnMovementStyleChange";
     }
 
     public static class SunEventManager

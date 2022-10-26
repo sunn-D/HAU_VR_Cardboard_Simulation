@@ -14,12 +14,14 @@ namespace UI_Controller.UI
 
         public override void Show()
         {
-            
+            CheckShowTemplate();
+            ShowTemplate();
         }
 
         public override void Hide()
         {
-            
+            CheckHideTemplate();
+            HideTemplate();
         }
 
         #endregion

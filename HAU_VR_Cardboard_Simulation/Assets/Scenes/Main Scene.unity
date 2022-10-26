@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 36187465}
   - component: {fileID: 36187464}
   - component: {fileID: 36187463}
+  - component: {fileID: 36187462}
   m_Layer: 5
   m_Name: Setting Button
   m_TagString: Untagged
@@ -162,6 +163,25 @@ RectTransform:
   m_AnchoredPosition: {x: 242, y: -170}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &36187462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36187460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8e2605a5caa43c0adde049d04d0a7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenButton: {fileID: 36187464}
+  imageButton: {fileID: 36187465}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  touchColor: {r: 0.97, g: 0.56, b: 0.34, a: 1}
+  colliderButton: {fileID: 36187463}
+  lastTimeClick: 0
+  delayTimeClick: 0.5
 --- !u!65 &36187463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -500,9 +520,174 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   uiScreens:
   - {fileID: 946067840}
+  - {fileID: 807134892}
+  - {fileID: 1499677916}
+  - {fileID: 683679132}
   startingScreen: {fileID: 946067840}
   loadInAction: 1
   eventSystem: {fileID: 1280821162}
+--- !u!1 &260687294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260687295}
+  - component: {fileID: 260687300}
+  - component: {fileID: 260687299}
+  - component: {fileID: 260687298}
+  - component: {fileID: 260687297}
+  - component: {fileID: 260687296}
+  m_Layer: 5
+  m_Name: Back Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &260687295
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260687294}
+  m_LocalRotation: {x: -0, y: 0.13052616, z: -0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 683679131}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 340, y: -188.00002}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &260687296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260687294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d4fa697b654973bd3304adfa3be837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenButton: {fileID: 260687298}
+  imageButton: {fileID: 260687299}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  touchColor: {r: 0.97, g: 0.56, b: 0.34, a: 1}
+  colliderButton: {fileID: 260687297}
+  lastTimeClick: 0
+  delayTimeClick: 0.5
+--- !u!65 &260687297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260687294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 75, y: 75, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &260687298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260687294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae64e144aaa44bf0816a160e76dfc2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupTween: 2
+  tweenIndex: 0
+  isActive: 1
+  duration: 0.1
+  mainTarget: {fileID: 260687295}
+  isAutoPlay: 0
+  direction: 0
+  enableBeforeForward: 0
+  disableAfterReverse: 0
+  sameStyleInReverse: 1
+  easeForward: 1
+  styleForward: 0
+  easeReverse: 26
+  styleReverse: 0
+  loopStyle: 1
+  loopCount: -1
+  delayWhen: 0
+  delay: 0
+  startEventWhen: 0
+  finishedEventWhen: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 260687298}
+        m_TargetAssemblyTypeName: DunnGSunn.SunTweenScale, Assembly-CSharp
+        m_MethodName: PlayReverse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  from: {x: 1, y: 1, z: 1}
+  to: {x: 1.1, y: 1.1, z: 1.1}
+--- !u!114 &260687299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260687294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9a18eda13e985c24a9c264280856c707, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &260687300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260687294}
+  m_CullTransparentMesh: 1
 --- !u!1 &260755171
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +701,7 @@ GameObject:
   - component: {fileID: 260755176}
   - component: {fileID: 260755175}
   - component: {fileID: 260755174}
+  - component: {fileID: 260755173}
   m_Layer: 5
   m_Name: Info Button
   m_TagString: Untagged
@@ -542,6 +728,25 @@ RectTransform:
   m_AnchoredPosition: {x: 330, y: -175}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &260755173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260755171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d99e56e010e4816bde40ef75206a1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenButton: {fileID: 260755175}
+  imageButton: {fileID: 260755176}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  touchColor: {r: 0.97, g: 0.56, b: 0.34, a: 1}
+  colliderButton: {fileID: 260755174}
+  lastTimeClick: 0
+  delayTimeClick: 0.5
 --- !u!65 &260755174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -933,7 +1138,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 260687295}
   m_Father: {fileID: 579826683}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2275,6 +2481,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1491502753}
+  - {fileID: 1692038713}
   m_Father: {fileID: 579826683}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2303,6 +2510,168 @@ MonoBehaviour:
   usingTweenHide: 0
   tweenShow: {fileID: 0}
   tweenHide: {fileID: 0}
+--- !u!1 &1692038712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692038713}
+  - component: {fileID: 1692038718}
+  - component: {fileID: 1692038717}
+  - component: {fileID: 1692038716}
+  - component: {fileID: 1692038715}
+  - component: {fileID: 1692038714}
+  m_Layer: 5
+  m_Name: Back Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1692038713
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692038712}
+  m_LocalRotation: {x: -0, y: 0.13052616, z: -0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1499677915}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 15, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 340, y: -188.00002}
+  m_SizeDelta: {x: 70, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1692038714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692038712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d4fa697b654973bd3304adfa3be837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenButton: {fileID: 1692038716}
+  imageButton: {fileID: 1692038717}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  touchColor: {r: 0.97, g: 0.56, b: 0.34, a: 1}
+  colliderButton: {fileID: 1692038715}
+  lastTimeClick: 0
+  delayTimeClick: 0.5
+--- !u!65 &1692038715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692038712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 75, y: 75, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1692038716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692038712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae64e144aaa44bf0816a160e76dfc2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groupTween: 2
+  tweenIndex: 0
+  isActive: 1
+  duration: 0.1
+  mainTarget: {fileID: 1692038713}
+  isAutoPlay: 0
+  direction: 0
+  enableBeforeForward: 0
+  disableAfterReverse: 0
+  sameStyleInReverse: 1
+  easeForward: 1
+  styleForward: 0
+  easeReverse: 26
+  styleReverse: 0
+  loopStyle: 1
+  loopCount: -1
+  delayWhen: 0
+  delay: 0
+  startEventWhen: 0
+  finishedEventWhen: 1
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1692038716}
+        m_TargetAssemblyTypeName: DunnGSunn.SunTweenScale, Assembly-CSharp
+        m_MethodName: PlayReverse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  from: {x: 1, y: 1, z: 1}
+  to: {x: 1.1, y: 1.1, z: 1.1}
+--- !u!114 &1692038717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692038712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9a18eda13e985c24a9c264280856c707, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1692038718
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692038712}
+  m_CullTransparentMesh: 1
 --- !u!1 &1717919198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2990,7 @@ GameObject:
   - component: {fileID: 1930072723}
   - component: {fileID: 1930072722}
   - component: {fileID: 1930072721}
+  - component: {fileID: 1930072720}
   m_Layer: 5
   m_Name: Map Button
   m_TagString: Untagged
@@ -2647,6 +3017,25 @@ RectTransform:
   m_AnchoredPosition: {x: -320, y: -170}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1930072720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930072718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83043d799c574ca69d24e460bc56423e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenButton: {fileID: 1930072722}
+  imageButton: {fileID: 1930072723}
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  touchColor: {r: 0.97, g: 0.56, b: 0.34, a: 1}
+  colliderButton: {fileID: 1930072721}
+  lastTimeClick: 0
+  delayTimeClick: 0.5
 --- !u!65 &1930072721
 BoxCollider:
   m_ObjectHideFlags: 0

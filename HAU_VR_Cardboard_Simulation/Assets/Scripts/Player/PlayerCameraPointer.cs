@@ -16,11 +16,14 @@ namespace Player
         public float maxGazerTime = 1f;
         [FoldoutGroup("Variables/Default configs")]
         public LayerMask layerMaskRay;
+        [FoldoutGroup("Variables/Default configs")] 
+        public float delayGazeTime = .5f;
 
         //
         private RaycastHit _raycastHit;
         private GameObject _gazeAtObject;
         private float _currentGazerTimer;
+        private float _currentDelayTimer;
         private bool _gazerStatus;
         
         #endregion
@@ -36,6 +39,12 @@ namespace Player
         //
         private void Update()
         {
+            if (_currentDelayTimer > 0)
+            {
+                _currentDelayTimer -= Time.deltaTime;
+                return;
+            }
+            
             if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, maxDistanceRay, layerMaskRay))
             {
                 if (_gazeAtObject != _raycastHit.transform.gameObject)
@@ -74,6 +83,7 @@ namespace Player
                         newIPointer?.OnPointerClick();
                         
                         // Reset gazer
+                        _currentDelayTimer = delayGazeTime;
                         ResetGazer();
                         SunEventManager.EmitEvent(EventID.OnGazerTimerFinish);
                     }
