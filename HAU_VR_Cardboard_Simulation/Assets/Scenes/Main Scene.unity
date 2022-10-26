@@ -421,7 +421,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 6.5}
+  m_AnchoredPosition: {x: 0, y: 2.5}
   m_SizeDelta: {x: 750, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122914587
@@ -1575,7 +1575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882951696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 580230477}
@@ -1844,7 +1844,7 @@ GameObject:
   - component: {fileID: 1406850663}
   - component: {fileID: 1406850662}
   - component: {fileID: 1406850661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1986,7 +1986,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<align=\"center\">Ch\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi \u1EE9ng d\u1EE5ng</align>\n<color=#FF0000><b><align=\"center\"><size=30>M\xF4
-    ph\u1ECFng khu\xF4n vi\xEAn tr\u01B0\u1EDDng \u0110\u1EA1i h\u1ECDc Ki\u1EBFn
+    ph\u1ECFng khu\xF4n vi\xEAn tr\u01B0\u1EDDng \n\u0110\u1EA1i h\u1ECDc Ki\u1EBFn
     tr\xFAc H\xE0 N\u1ED9i.</size></align></b></color>\n\nTr\u1ECF v\xE0 gi\u1EEF
     v\xE0o n\xFAt <color=#FF0000>B\u1EAFt \u0111\u1EA7u</color> \u0111\u1EC3 th\u0103m
     quan.\nTr\u1ECF v\xE0 gi\u1EEF v\xE0o n\xFAt <color=#FF0000>B\u1EA3n \u0111\u1ED3</color>
@@ -2262,7 +2262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1499677915
 RectTransform:
   m_ObjectHideFlags: 0
