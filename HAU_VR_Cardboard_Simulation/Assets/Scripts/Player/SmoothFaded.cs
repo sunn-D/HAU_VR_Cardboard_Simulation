@@ -75,7 +75,9 @@ namespace Player
         private IEnumerator FadeCoroutine(float alphaIn, float alphaOut)
         {
             var timer = 0f;
-            OnStartAction?.Invoke();
+            var startAction = OnStartAction;
+            OnStartAction = () => { };
+            startAction?.Invoke();
 
             while (timer <= fadeDuration)
             {
@@ -89,7 +91,9 @@ namespace Player
             var color = fadeColor;
             color.a = alphaOut;
             _renderer.material.SetColor(ColorMaterialField, color);
-            OnFinishAction?.Invoke();
+            var finishAction = OnFinishAction;
+            OnFinishAction = () => { };
+            finishAction?.Invoke();
             if (disableAfterPlay)
             {
                 gameObject.SetActive(false);

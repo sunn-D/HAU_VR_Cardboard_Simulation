@@ -49,7 +49,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/FirstLoading.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/MainCoroutineThread.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/SmoothFaded.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/SmoothFaded.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIFirstLoading.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UIHome.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UISetting.cs" />
@@ -57,7 +56,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/asd.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/UIBaseButton.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIFirstLoading.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonPlay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonMap.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonSetting.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonBack.cs" />
@@ -71,6 +69,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/AppPreferences.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/SceneLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/SmoothFaded.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonPlay.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FXjBnORWlGqflQifqzI6HQMmNA" />
