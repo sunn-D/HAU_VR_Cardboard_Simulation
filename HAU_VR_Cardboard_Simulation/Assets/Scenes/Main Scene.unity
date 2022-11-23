@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1717919199}
-  m_IndirectSpecularColor: {r: 0.14265226, g: 0.20599748, b: 0.28343046, a: 1}
+  m_IndirectSpecularColor: {r: 0.1426492, g: 0.20599891, b: 0.2834241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1436,6 +1436,7 @@ MonoBehaviour:
   colliderButton: {fileID: 768814834}
   lastTimeClick: 0
   delayTimeClick: 0.5
+  delayPlay: 0
 --- !u!65 &768814834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3183,6 +3184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+  movementStyle: 1
 --- !u!1 &1938035804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,6 +3282,7 @@ MonoBehaviour:
   layerMaskRay:
     serializedVersion: 2
     m_Bits: 55
+  delayGazeTime: 0.5
 --- !u!114 &1938035808
 MonoBehaviour:
   m_ObjectHideFlags: 0
