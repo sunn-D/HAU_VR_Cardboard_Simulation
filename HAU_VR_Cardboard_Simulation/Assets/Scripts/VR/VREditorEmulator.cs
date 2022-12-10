@@ -9,14 +9,14 @@ namespace VR
         #region Variables
 
         //
-        private const string AXIS_MOUSE_X = "Mouse X";
-        private const string AXIS_MOUSE_Y = "Mouse Y";
+        private const string AxisMouseX = "Mouse X";
+        private const string AxisMouseY = "Mouse Y";
 
         //
-        private static readonly Vector3 NECK_OFFSET = new Vector3(0, 0.075f, 0.08f);
+        private static readonly Vector3 NeckOffset = new Vector3(0, 0.075f, 0.08f);
 
         //
-        private static Camera[] allCameras = new Camera[32];
+        private static Camera[] _allCameras = new Camera[32];
 
         //
         private float _mouseX;
@@ -45,7 +45,7 @@ namespace VR
             var rolled = false;
             if (CanChangeYawPitch())
             {
-                _mouseX += Input.GetAxis(AXIS_MOUSE_X) * 5;
+                _mouseX += Input.GetAxis(AxisMouseX) * 5;
                 if (_mouseX <= -180)
                 {
                     _mouseX += 360;
@@ -55,13 +55,13 @@ namespace VR
                     _mouseX -= 360;
                 }
 
-                _mouseY -= Input.GetAxis(AXIS_MOUSE_Y) * 2.4f;
+                _mouseY -= Input.GetAxis(AxisMouseY) * 2.4f;
                 _mouseY = Mathf.Clamp(_mouseY, -85, 85);
             }
             else if (CanChangeRoll())
             {
                 rolled = true;
-                _mouseZ += Input.GetAxis(AXIS_MOUSE_X) * 5;
+                _mouseZ += Input.GetAxis(AxisMouseX) * 5;
                 _mouseZ = Mathf.Clamp(_mouseZ, -85, 85);
             }
 
@@ -124,7 +124,7 @@ namespace VR
         private void UpdateHeadPositionAndRotation()
         {
             HeadRotation = Quaternion.Euler(_mouseY, _mouseX, _mouseZ);
-            HeadPosition = (HeadRotation * NECK_OFFSET) - (NECK_OFFSET.y * Vector3.up);
+            HeadPosition = (HeadRotation * NeckOffset) - (NeckOffset.y * Vector3.up);
         }
 
         //
@@ -134,12 +134,13 @@ namespace VR
 
             for (var i = 0; i < Camera.allCamerasCount; ++i)
             {
-                var cam = allCameras[i];
-
+                var cam = _allCameras[i];
+                var camTransform = cam.transform;
+                
                 if (cam && cam.enabled && cam.stereoTargetEye != StereoTargetEyeMask.None)
                 {
-                    cam.transform.localPosition = HeadPosition * cam.transform.lossyScale.y;
-                    cam.transform.localRotation = HeadRotation;
+                    camTransform.localPosition = HeadPosition * camTransform.lossyScale.y;
+                    camTransform.localRotation = HeadRotation;
                 }
             }
         }
@@ -149,7 +150,7 @@ namespace VR
         {
             Cursor.lockState = CursorLockMode.Locked;
             
-            if (Camera.allCamerasCount > allCameras.Length)
+            if (Camera.allCamerasCount > _allCameras.Length)
             {
                 var newAllCamerasSize = Camera.allCamerasCount;
                 while (Camera.allCamerasCount > newAllCamerasSize)
@@ -157,10 +158,10 @@ namespace VR
                     newAllCamerasSize *= 2;
                 }
 
-                allCameras = new Camera[newAllCamerasSize];
+                _allCameras = new Camera[newAllCamerasSize];
             }
 
-            Camera.GetAllCameras(allCameras);
+            Camera.GetAllCameras(_allCameras);
         }
         
         #endregion

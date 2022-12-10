@@ -19,16 +19,10 @@ namespace VR
         private Camera _mainCamera;
         
         //
-        public bool IsScreenTouched
-        {
-            get => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
-        }
-        
+        public static bool IsScreenTouched => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+
         //
-        public bool IsVRModeEnabled
-        {
-            get => XRGeneralSettings.Instance.Manager.isInitializationComplete;
-        }
+        public static bool IsVRModeEnabled => XRGeneralSettings.Instance.Manager.isInitializationComplete;
 
         #endregion
 

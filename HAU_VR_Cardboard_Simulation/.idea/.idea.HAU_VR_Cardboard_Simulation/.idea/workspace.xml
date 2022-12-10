@@ -11,8 +11,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -23,10 +23,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/IPointerAction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TestObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/VR/VRCameraPointer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VRModeController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/VR/PlayerCameraPointer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/AudioManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VREditorEmulator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportCotroller.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/ButtonUI.cs" />
@@ -60,6 +58,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Manager/SceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/SmoothFaded.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/Elements/ButtonPlay.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VRModeController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/VR/VREditorEmulator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FXjBnORWlGqflQifqzI6HQMmNA" />
@@ -75,7 +75,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
