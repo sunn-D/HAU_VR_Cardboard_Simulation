@@ -1,7 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eec98bda-c075-4af3-b28c-2caa50ce7ba9" name="Default Changelist" comment="" />
+    <list default="true" id="eec98bda-c075-4af3-b28c-2caa50ce7ba9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HAU_VR_Cardboard_Simulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HAU_VR_Cardboard_Simulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fantastic City Generator/Traffic System/Vehicles/FBX/Car_06.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Fantastic City Generator/Traffic System/Vehicles/FBX/Car_06.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7.dae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7.dae.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Aluminum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Aluminum.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Granite_Brown.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Granite_Brown.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_16.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_17.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_18.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_19.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_20.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_21.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_22.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_23.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_24.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_26.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_27.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_28.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_29.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_30.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_31.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_33.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_34.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_35.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_36.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_37.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_38.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_39.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_40.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_41.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_42.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_43.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_44.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_45.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_46.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_47.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_48.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_49.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_51.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_52.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_53.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_53.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_54.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_55.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_55.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_56.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_56.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_57.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_57.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_58.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_58.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_59.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_60.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_61.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_61.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_62.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_62.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_63.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_63.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_65.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_65.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_66.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_67.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_67.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_68.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_68.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_69.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_7.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_70.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_70.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_71.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_71.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_72.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_73.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_73.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_74.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_74.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_75.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_75.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_76.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_76.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_77.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_77.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_78.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_78.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_79.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_79.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_8.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_80.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_81.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_81.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_82.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_82.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_83.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_83.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_84.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_84.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_85.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_85.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_86.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_86.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_87.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_87.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_88.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_88.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_89.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_89.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_9.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_90.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_90.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_91.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_91.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_92.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_92.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_93.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_93.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_94.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_94.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_95.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_95.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_96.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Leather_basic__Black_bump_96.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/P15850772.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/P15850772.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Podnoz_s.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/Podnoz_s.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/_1063.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/_1063.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/map-go-oc-cho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/map-go-oc-cho.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/material_99.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/HAU Model/Tầng 7/material_99.jpg.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,8 +227,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -118,6 +334,7 @@
       <workItem from="1666316984462" duration="8523000" />
       <workItem from="1666762225673" duration="749000" />
       <workItem from="1669253977691" duration="594000" />
+      <workItem from="1670989723630" duration="592000" />
     </task>
     <servers />
   </component>
