@@ -1006,10 +1006,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Sun Package/SunSingleton/SunScriptableSingleton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C130875F-7B39-4250-A2D3-617F6B5A735B/75/4ebd5c6f/Camera.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/TrackedPoseDriver/TrackedPoseDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@5c9645eb26/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
