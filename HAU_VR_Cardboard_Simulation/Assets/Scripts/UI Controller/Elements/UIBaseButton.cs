@@ -1,4 +1,4 @@
-﻿using DunnGSunn;
+﻿using Sun_Package;
 using Player;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -13,7 +13,7 @@ namespace UI_Controller.Elements
         [FoldoutGroup("Variables")]
         //
         [FoldoutGroup("Variables/Tween")]
-        public SunTween tweenButton;
+        public SunTweenUI tweenButton;
         //
         [FoldoutGroup("Variables/Renderer")] 
         public Image imageButton;
@@ -48,7 +48,7 @@ namespace UI_Controller.Elements
         private void Reset()
         {
             //
-            tweenButton = GetComponent<SunTween>();
+            tweenButton = GetComponent<SunTweenUI>();
             imageButton = GetComponent<Image>();
             colliderButton = GetComponent<BoxCollider>();
             

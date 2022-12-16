@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using DunnGSunn;
+using Sun_Package;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

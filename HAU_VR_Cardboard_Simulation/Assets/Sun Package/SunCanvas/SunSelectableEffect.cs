@@ -4,24 +4,28 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class SunSelectableEffect : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         #region Sub-Classes
+        
         [Serializable]
         public class UIButtonEvent : UnityEvent<PointerEventData.InputButton> { }
+        
         #endregion
         
         #region Events
+        
         [FoldoutGroup("Variables")] 
+        //
         [FoldoutGroup("Variables/Condition show")]
         public bool usingPressEvent;
         [FoldoutGroup("Variables/Condition show")]
         public bool usingReleaseEvent;
         [FoldoutGroup("Variables/Condition show")]
         public bool usingHeldEvent;
-        
+        //
         [FoldoutGroup("Variables/Event"), ShowIf("usingPressEvent")]
         public UIButtonEvent OnButtonPress;
         [FoldoutGroup("Variables/Event"), ShowIf("usingReleaseEvent")]
@@ -29,9 +33,13 @@ namespace DunnGSunn
         [FoldoutGroup("Variables/Event"), ShowIf("usingHeldEvent")]
         public UIButtonEvent OnButtonHeld;
         
+        //
         private bool _pressed;
         private PointerEventData _heldEventData;
+        
         #endregion
+
+        #region Variables
 
         void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
         {
@@ -58,5 +66,7 @@ namespace DunnGSunn
         {
             _pressed = false;
         }
+
+        #endregion
     }
 }

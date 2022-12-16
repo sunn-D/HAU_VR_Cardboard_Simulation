@@ -5,7 +5,6 @@ namespace VR
     public class VREditorEmulator : MonoBehaviour
     {
 #if UNITY_EDITOR
-
         #region Variables
 
         //
@@ -165,7 +164,6 @@ namespace VR
         }
         
         #endregion
-        
 #endif
     }
 }

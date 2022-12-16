@@ -9,20 +9,32 @@ namespace VR
     public class VRModeController : MonoBehaviour
     {
         #region Variables
-
-        [FoldoutGroup("Variables")]
+        
         //
-        [FoldoutGroup("Variables/Default configs")]
+        [FoldoutGroup("Variables")]
         public float defaultFieldOfView = 60f;
         
         //
         private Camera _mainCamera;
+        private Coroutine _startXR;
         
         //
-        public static bool IsScreenTouched => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+        public static bool IsScreenTouched
+        {
+            get
+            {
+                return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+            }
+        }
 
         //
-        public static bool IsVRModeEnabled => XRGeneralSettings.Instance.Manager.isInitializationComplete;
+        public static bool IsVRModeEnabled
+        {
+            get
+            {
+                return XRGeneralSettings.Instance.Manager.isInitializationComplete;
+            }
+        }
 
         #endregion
 
@@ -57,7 +69,7 @@ namespace VR
         //
         private void EnterVRMode()
         {
-            StartCoroutine(nameof(StartXR));
+            StartXR();
             if (Api.HasNewDeviceParams()) Api.ReloadDeviceParams();
         }
         
@@ -68,7 +80,14 @@ namespace VR
         }
         
         //
-        private IEnumerator StartXR()
+        private void StartXR()
+        {
+            if (_startXR != null) StopCoroutine(_startXR);
+            _startXR = StartCoroutine(nameof(StartXRCoroutine));
+        }
+
+        //
+        private IEnumerator StartXRCoroutine()
         {
             yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
             if (XRGeneralSettings.Instance.Manager.activeLoader != null)

@@ -4,61 +4,88 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class SunTweenControl : MonoBehaviour
     {
-        #region Fields
+        #region Variables
 
         [FoldoutGroup("Tween")]
+        //
         [FoldoutGroup("Tween/Tween Base Info")]
-        public GroupTween groupTween;
+        [SerializeField] private GroupTween groupTween;
         [FoldoutGroup("Tween/Tween Base Info")]
-        public bool isActive = true;
+        [SerializeField] private bool isActive = true;
         [FoldoutGroup("Tween/Tween Base Info")]
-        public GameObject mainTarget;
-
+        [SerializeField] private GameObject mainTarget;
+        //
         [FoldoutGroup("Tween/Enable - Disable")]
-        public bool enableBeforeForward = true;
+        [SerializeField] private bool enableBeforeForward = true;
         [FoldoutGroup("Tween/Enable - Disable")]
-        public bool disableAfterReverse = true;
-
+        [SerializeField] private bool disableAfterReverse = true;
+        //
         [FoldoutGroup("Tween/Delay")]
-        public DelayWhen delayWhen = DelayWhen.None;
+        [SerializeField] private DelayWhen delayWhen = DelayWhen.None;
         [FoldoutGroup("Tween/Delay"), HideIf("delayWhen", DelayWhen.None)]
-        public float delay;
-
+        [SerializeField] private float delay;
+        //
         [FoldoutGroup("Tween/List Tween")]
-        public List<SunTween> listTween;
-        
+        [SerializeField] private List<SunTweenUI> listTween;
+        //
         [FoldoutGroup("Tween/Event trigger")]
-        public EventWhen startEventWhen = EventWhen.None;
+        [SerializeField] private EventWhen startEventWhen = EventWhen.None;
         [FoldoutGroup("Tween/Event trigger")]
-        public EventWhen finishedEventWhen = EventWhen.None;
+        [SerializeField] private EventWhen finishedEventWhen = EventWhen.None;
         [FoldoutGroup("Tween/Event trigger"), HideIf("startEventWhen", EventWhen.None)]
-        public UnityEvent onStart;
+        [SerializeField] private UnityEvent onStartEvent;
         [FoldoutGroup("Tween/Event trigger"), HideIf("finishedEventWhen", EventWhen.None)]
-        public UnityEvent onFinished;
+        [SerializeField] private UnityEvent onFinishedEvent;
+        
+        //
+        public UnityEvent OnStartEvent
+        {
+            get => onStartEvent;
+            set => onStartEvent = value;
+        }
+        public UnityEvent OnFinishedEvent
+        {
+            get => onFinishedEvent;
+            set => onFinishedEvent = value;
+        }
+        public EventWhen StartEventWhen
+        {
+            get => startEventWhen;
+            set => startEventWhen = value;
+        }
+        public EventWhen FinishedEventWhen
+        {
+            get => finishedEventWhen;
+            set => finishedEventWhen = value;
+        }
 
+        //
         public bool Animating { get; private set; }
         public float Duration { get; private set; }
 
+        //
         private Sequence _allTweenSequence;
 
         #endregion
 
-        #region Unity callback functions
+        #region Functions
 
+        //
         private void Reset()
         {
             if (mainTarget == null) mainTarget = transform.gameObject;
         }
 
+        //
         private void Awake()
         {
             if (listTween == null)
             {
-                listTween = new List<SunTween>();
+                listTween = new List<SunTweenUI>();
                 Debug.Log("Không có tween nào trong danh sách.");
             }
 
@@ -69,7 +96,8 @@ namespace DunnGSunn
 
         #region Tween functions
 
-        [FoldoutGroup("Button"), Button]
+        //
+        [FoldoutGroup("Button"), Button(ButtonSizes.Large)]
         public void PlayForward()
         {
             if (!isActive) return;
@@ -92,7 +120,7 @@ namespace DunnGSunn
                 {
                     if (startEventWhen == EventWhen.Forward || startEventWhen == EventWhen.Both)
                     {
-                        onStart?.Invoke();
+                        onStartEvent?.Invoke();
                     }
                     Animating = true;
                 })
@@ -100,14 +128,15 @@ namespace DunnGSunn
                 {
                     if (finishedEventWhen == EventWhen.Forward || finishedEventWhen == EventWhen.Both)
                     {
-                        onFinished?.Invoke();
+                        onFinishedEvent?.Invoke();
                     }
                     Animating = false;
                 })
                 .Play();
         }
 
-        [FoldoutGroup("Button"), Button]
+        //
+        [FoldoutGroup("Button"), Button(ButtonSizes.Large)]
         public void PlayReverse()
         {
             if (!isActive) return;
@@ -128,7 +157,7 @@ namespace DunnGSunn
                 {
                     if (startEventWhen == EventWhen.Reverse || startEventWhen == EventWhen.Both)
                     {
-                        onStart?.Invoke();
+                        onStartEvent?.Invoke();
                     }
                     Animating = true;
                 })
@@ -136,7 +165,7 @@ namespace DunnGSunn
                 {
                     if (finishedEventWhen == EventWhen.Reverse || finishedEventWhen == EventWhen.Both)
                     {
-                        onFinished?.Invoke();
+                        onFinishedEvent?.Invoke();
                     }
                     Animating = false;
                     if (disableAfterReverse) mainTarget.SetActive(false);
@@ -144,21 +173,24 @@ namespace DunnGSunn
                 .Play();
         }
 
+        //
+        [FoldoutGroup("Button"), Button(ButtonSizes.Large)]
         public void Stop(bool complete = false)
         {
             _allTweenSequence?.Kill(complete);
         }
 
-        [FoldoutGroup("Button"), Button]
+        //
+        [FoldoutGroup("Button"), Button(ButtonSizes.Large)]
         public void AddTweenFromChildren()
         {
-            if (listTween == null) listTween = new List<SunTween>();
+            if (listTween == null) listTween = new List<SunTweenUI>();
             listTween.Clear();
 
-            var allTweenInChild = transform.GetComponentsInChildren<SunTween>();
+            var allTweenInChild = transform.GetComponentsInChildren<SunTweenUI>();
             foreach (var tweenHelper in allTweenInChild)
             {
-                if (tweenHelper.groupTween == groupTween)
+                if (tweenHelper.GroupTween == groupTween)
                 {
                     listTween.Add(tweenHelper);
                 }
@@ -166,16 +198,17 @@ namespace DunnGSunn
 
             listTween.Sort((tween1, tween2) =>
             {
-                if (tween1.tweenIndex < tween2.tweenIndex) return -1;
-                if (tween1.tweenIndex == tween2.tweenIndex) return 0;
+                if (tween1.TweenIndex < tween2.TweenIndex) return -1;
+                if (tween1.TweenIndex == tween2.TweenIndex) return 0;
                 return 1;
             });
         }
 
-        [FoldoutGroup("Button"), Button]
+        //
+        [FoldoutGroup("Button"), Button(ButtonSizes.Large)]
         public void ResetListTween()
         {
-            if (listTween == null) listTween = new List<SunTween>();
+            if (listTween == null) listTween = new List<SunTweenUI>();
             listTween.Clear();
         }
 

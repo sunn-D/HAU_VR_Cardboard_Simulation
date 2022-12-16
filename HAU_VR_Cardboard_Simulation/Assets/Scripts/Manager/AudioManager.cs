@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using DG.Tweening;
-using DunnGSunn;
 using Sirenix.OdinInspector;
+using Sun_Package;
 using UnityEngine;
 
-namespace Audio
+namespace Manager
 {
-    [Serializable] public enum AudioGroupType
+    [Serializable] 
+    public enum AudioGroupType
     {
         BGSound, UXSound
     }
     
-    [Serializable] public class Sound
+    [Serializable] 
+    public class Sound
     {
         #region Variables
 
@@ -103,9 +105,6 @@ namespace Audio
         [FoldoutGroup("Variables/Audio")]
         [SerializeField] private AudioListener audioListener;
         //
-        [FoldoutGroup("Variables/Audio")] 
-        [SerializeField] private string bgSoundName = "bgsound";
-        //
         [FoldoutGroup("Variables/Sounds")]
         [SerializeField] private List<Sound> sounds;
         //
@@ -128,14 +127,6 @@ namespace Audio
                 PlayerPrefs.SetInt("Audio uxsoundvalue", value ? 1 : 0);
             }
         }
-        public static bool VibrationValue
-        {
-            get => PlayerPrefs.GetInt("Audio vibrationvalue") == 1;
-            set
-            {
-                PlayerPrefs.SetInt("Audio vibrationvalue", value ? 1 : 0);
-            }
-        }
 
         #endregion
 
@@ -147,7 +138,6 @@ namespace Audio
             //
             if (!PlayerPrefs.HasKey("Audio bgsoundvalue")) BGSoundValue = true;
             if (!PlayerPrefs.HasKey("Audio uxsoundvalue")) UXSoundValue = true;
-            if (!PlayerPrefs.HasKey("Audio vibrationvalue")) VibrationValue = true;
             
             //
             foreach (var sound in sounds)
@@ -192,43 +182,24 @@ namespace Audio
         //
         private void OnBGSoundValueChange()
         {
-            var bgSound = sounds.Find(s => s.ClipName == bgSoundName);
-            if (bgSound.IsPlaying)
+            var bgSound = sounds.Find(s => s.AudioGroup == AudioGroupType.BGSound);
+            if (BGSoundValue)
             {
-                if (BGSoundValue)
-                {
-                    _tweenPlayBGSong?.Kill();
-                    _tweenPlayBGSong = DOTween.To(() => bgSound.Volume, x => bgSound.Volume = x, 1f, .25f)
-                        .OnStart(() =>
-                        {
-                            bgSound.Stop();
-                            audioListener.enabled = true;
-                            bgSound.Volume = 0f;
-                            bgSound.Play();
-                        });
-                }
-                else
-                {
-                    _tweenStopBGSong?.Kill();
-                    _tweenStopBGSong = DOTween.To(() => bgSound.Volume, x => bgSound.Volume = x, 0f, .25f);
-                }
+                _tweenPlayBGSong?.Kill();
+                _tweenPlayBGSong = DOTween.To(() => bgSound.Volume, x => bgSound.Volume = x, 1f, .25f)
+                    .OnStart(() =>
+                    {
+                        bgSound.Stop();
+                        audioListener.enabled = true;
+                        bgSound.Volume = 0f;
+                        bgSound.Play();
+                    });
             }
             else
             {
-                bgSound.Volume = BGSoundValue ? 1 : 0;
+                _tweenStopBGSong?.Kill();
+                _tweenStopBGSong = DOTween.To(() => bgSound.Volume, x => bgSound.Volume = x, 0f, .25f);
             }
-        }
-        
-        //
-        private void OnVibrationValueChange()
-        {
-            
-        }
-        
-        //
-        private void OnUXSoundValueChange()
-        {
-            
         }
 
         #endregion

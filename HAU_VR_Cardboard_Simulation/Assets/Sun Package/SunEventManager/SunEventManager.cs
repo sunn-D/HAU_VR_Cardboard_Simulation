@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     //ID của event cần sử dụng
     public static class EventID
@@ -30,6 +30,7 @@ namespace DunnGSunn
     {
         #region Fields
 
+        //
         private static Dictionary<string, UnityEvent> _eventDictionary = new Dictionary<string, UnityEvent>();
         private static Dictionary<string, object> _storage = new Dictionary<string, object>();
         private static Dictionary<string, object> _sender = new Dictionary<string, object>();

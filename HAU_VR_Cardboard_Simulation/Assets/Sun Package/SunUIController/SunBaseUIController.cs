@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using Sirenix.OdinInspector;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class SunBaseUIController : SunMonoSingleton<SunBaseUIController>
     {
@@ -13,26 +14,32 @@ namespace DunnGSunn
         
         //
         [FoldoutGroup("Variables")]
-        //
         [FoldoutGroup("Variables/Base info")]
-        public List<SunBaseUI> uiScreens;
+        [SerializeField] private List<SunBaseUI> uiScreens;
         [FoldoutGroup("Variables/Base info")] 
-        public SunBaseUI startingScreen;
+        [SerializeField] private SunBaseUI startingScreen;
         [FoldoutGroup("Variables/Base info")] 
-        public LoadIn loadInAction;
+        [SerializeField] private LoadIn loadInAction;
         //
-        [FoldoutGroup("Variables/Stack UI")]
-        public Stack<SunBaseUI> uiStack = new Stack<SunBaseUI>();
+        [FoldoutGroup("Variables/Event System")]
+        [SerializeField] private bool usingEventSystem;
+        [FoldoutGroup("Variables/Event System"), ShowIf(nameof(usingEventSystem))] 
+        [SerializeField] private EventSystem eventSystem;
+        
         //
-        [FoldoutGroup("Variables/Event System")] 
-        public EventSystem eventSystem;
+        public Stack<SunBaseUI> UIStack { get; set; } = new Stack<SunBaseUI>();
 
         #endregion
-        
+
+        #region Functions
+
         //
         public static void SetEventSystemValue(bool value)
         {
-            Instance.eventSystem.enabled = value;
+            if (Instance.usingEventSystem)
+            {
+                Instance.eventSystem.enabled = value;
+            }
         }
         
         //
@@ -45,37 +52,39 @@ namespace DunnGSunn
                     return tScreenUI;
                 }
             }
+
+            Debug.LogWarning("Can't find screen. Checking all Screen UI!");
             return null;
         }
         
         //
         public static bool IsScreenInTopStack<T>() where T : SunBaseUI
         {
-            return Instance.uiStack.Count > 0 && GetScreen<T>() == Instance.uiStack.Peek();
+            return Instance.UIStack.Count > 0 && GetScreen<T>() == Instance.UIStack.Peek();
         }
         
         //
         public static void PushScreen<T>(bool showPushScreen = true, bool hideCurrentScreen = true) where T : SunBaseUI
         {
-            if (Instance.uiStack.Count > 0)
+            if (Instance.UIStack.Count > 0)
             {
-                var currentScreen = Instance.uiStack.Peek();
+                var currentScreen = Instance.UIStack.Peek();
                 if (hideCurrentScreen) currentScreen.Hide();
             }
             
             var screen = GetScreen<T>();
             if (showPushScreen) screen.Show();
 
-            Instance.uiStack.Push(screen);
+            Instance.UIStack.Push(screen);
         }
         
         //
         public static void PopScreen(bool hideCurrentScreen = true, bool showNewCurrentScreen = true)
         {
-            if (Instance.uiStack.Count > 1)
+            if (Instance.UIStack.Count > 1)
             {
-                var currentScreen = Instance.uiStack.Pop();
-                var newCurrentScreen = Instance.uiStack.Peek();
+                var currentScreen = Instance.UIStack.Pop();
+                var newCurrentScreen = Instance.UIStack.Peek();
                 
                 if (hideCurrentScreen) currentScreen.Hide();
                 if (showNewCurrentScreen) newCurrentScreen.Show();
@@ -85,7 +94,7 @@ namespace DunnGSunn
         //
         public static void PopAllScreen()
         {
-            var totalScreenInStack = Instance.uiStack.Count;
+            var totalScreenInStack = Instance.UIStack.Count;
             while (totalScreenInStack > 2)
             {
                 PopScreen(true, false);
@@ -95,7 +104,7 @@ namespace DunnGSunn
         }
         
         //
-        public virtual void Initialize()
+        public void Initialize()
         {
             foreach (var screenUI in Instance.uiScreens)
             {
@@ -106,7 +115,7 @@ namespace DunnGSunn
 
             if (Instance.startingScreen != null)
             {
-                Instance.uiStack.Push(Instance.startingScreen);
+                Instance.UIStack.Push(Instance.startingScreen);
                 Instance.startingScreen.Show();
             }
         }
@@ -135,5 +144,7 @@ namespace DunnGSunn
                 uiScreens.Add(ui);
             }
         }
+
+        #endregion
     }
 }

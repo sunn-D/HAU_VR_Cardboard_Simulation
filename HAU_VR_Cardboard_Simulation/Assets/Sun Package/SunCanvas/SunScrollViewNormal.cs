@@ -1,7 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class SunScrollViewNormal : MonoBehaviour
     {
@@ -24,17 +24,22 @@ namespace DunnGSunn
         [SerializeField] private int numberOfElementShowing;
         
         //
-        private GameObject[] elements;
+        public GameObject[] Elements { get; set; }
+        
+        //
         private bool _isInitialize;
 
         #endregion
 
+        #region Functions
+        
         //
         private void Start()
         {
             if (initOnStart) Initialize();
         }
 
+        //
         private void OnEnable()
         {
             if (resetOnEnable)
@@ -47,10 +52,10 @@ namespace DunnGSunn
         public void Initialize()
         {
             //
-            elements = new GameObject[content.childCount];
+            Elements = new GameObject[content.childCount];
             for (var i = 0; i < content.childCount; i++)
             {
-                elements[i] = content.GetChild(i).gameObject;
+                Elements[i] = content.GetChild(i).gameObject;
             }
 
             //
@@ -61,15 +66,17 @@ namespace DunnGSunn
         private void Update()
         {
             if (!_isInitialize) return;
-            if (elements.Length < numberOfElementShowing) return;
+            if (Elements.Length < numberOfElementShowing) return;
          
             // Deactive elements over top/bottom
-            foreach (var elementGO in elements)
+            foreach (var elementGO in Elements)
             {
                 var distanceTop = topContent.position.y - elementGO.GetComponent<RectTransform>().position.y;
                 var distanceBottom = bottomContent.position.y - elementGO.GetComponent<RectTransform>().position.y;
                 elementGO.transform.GetChild(0).gameObject.SetActive(distanceTop >= 0f && distanceBottom <= 0f);
             }
         }
+        
+        #endregion
     }
 }

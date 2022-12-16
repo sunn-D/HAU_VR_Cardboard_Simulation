@@ -1,5 +1,5 @@
-﻿using DunnGSunn;
-using Sirenix.OdinInspector;
+﻿using Scriptables;
+using Sun_Package;
 using UnityEngine;
 
 namespace Player
@@ -7,18 +7,7 @@ namespace Player
     public class PlayerCameraPointer : MonoBehaviour
     {
         #region Variables
-
-        [FoldoutGroup("Variables")]
-        //
-        [FoldoutGroup("Variables/Default configs")]
-        public float maxDistanceRay = 10f;
-        [FoldoutGroup("Variables/Default configs")]
-        public float maxGazerTime = 1f;
-        [FoldoutGroup("Variables/Default configs")]
-        public LayerMask layerMaskRay;
-        [FoldoutGroup("Variables/Default configs")] 
-        public float delayGazeTime = .5f;
-
+        
         //
         private RaycastHit _raycastHit;
         private GameObject _gazeAtObject;
@@ -45,7 +34,7 @@ namespace Player
                 return;
             }
             
-            if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, maxDistanceRay, layerMaskRay))
+            if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, PlayerConfig.Instance.MaxDistanceRay, PlayerConfig.Instance.LayerMaskRay))
             {
                 if (_gazeAtObject != _raycastHit.transform.gameObject)
                 {
@@ -62,7 +51,7 @@ namespace Player
                     
                     //
                     _currentGazerTimer -= Time.deltaTime;
-                    var process = (maxGazerTime - _currentGazerTimer) / maxGazerTime;
+                    var process = (PlayerConfig.Instance.MaxGazerTime - _currentGazerTimer) / PlayerConfig.Instance.MaxGazerTime;
                     SunEventManager.EmitEvent(EventID.OnGazerTimerProcess, sender: process);
                     
                     //
@@ -83,7 +72,7 @@ namespace Player
                         newIPointer?.OnPointerClick();
                         
                         // Reset gazer
-                        _currentDelayTimer = delayGazeTime;
+                        _currentDelayTimer = PlayerConfig.Instance.DelayGazeTime;
                         ResetGazer();
                         SunEventManager.EmitEvent(EventID.OnGazerTimerFinish);
                     }
@@ -100,7 +89,7 @@ namespace Player
                 
                 // Reset object and gazer timer
                 _gazeAtObject = null;
-                _currentGazerTimer = maxGazerTime;
+                _currentGazerTimer = PlayerConfig.Instance.MaxGazerTime;
                 
                 //
                 if (_gazerStatus)
@@ -114,15 +103,15 @@ namespace Player
         //
         private void ResetGazer()
         {
-            _currentGazerTimer = maxGazerTime;
+            _currentGazerTimer = PlayerConfig.Instance.MaxGazerTime;
             _gazerStatus = false;
         }
         
-        // Draw line in editor
+        // 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.black;
-            Gizmos.DrawLine(transform.position, transform.position + transform.forward * maxDistanceRay);
+            Gizmos.DrawLine(transform.position, transform.position + transform.forward * PlayerConfig.Instance.MaxDistanceRay);
         }
 
         #endregion

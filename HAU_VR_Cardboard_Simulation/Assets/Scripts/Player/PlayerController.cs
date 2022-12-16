@@ -1,16 +1,10 @@
-﻿using DunnGSunn;
+﻿using Sun_Package;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Player
 {
-    public enum MovementStyle
-    {
-        Teleport = 1,
-        HeadDown = 2
-    }
-    
     public class PlayerController : MonoBehaviour
     {
         #region Variables
@@ -20,20 +14,9 @@ namespace Player
         [FoldoutGroup("Variables/Pointer")]
         public Image pointProcessImage;
         //
-        [FoldoutGroup("Variables/Movement configs")]
-        public float toggleAngle = 30f;
-        [FoldoutGroup("Variables/Movement configs")]
-        public float speed = 3f;
-        [FoldoutGroup("Variables/Movement configs")]
-        public Transform cameraPlayer;
-        //
         [FoldoutGroup("Variables/Faded")] 
         public SmoothFaded smoothFaded;
 
-        //
-        private CharacterController _characterController;
-        private bool moveForward;
-        
         #endregion
 
         #region Functions
@@ -51,9 +34,6 @@ namespace Player
             //
             pointProcessImage.fillAmount = 0f;
             pointProcessImage.gameObject.SetActive(false);
-            
-            //
-            _characterController = GetComponent<CharacterController>();
         }
         
         //
@@ -70,25 +50,6 @@ namespace Player
             //
             SunEventManager.StartListening(EventID.ScreenFadedIn, ScreenFadedIn);
             SunEventManager.StartListening(EventID.ScreenFadedOut, ScreenFadedOut);
-        }
-
-        //
-        private void Update()
-        {
-            if (cameraPlayer.eulerAngles.x >= toggleAngle && cameraPlayer.eulerAngles.x < 90f)
-            {
-                moveForward = true;
-            }
-            else
-            {
-                moveForward = false;
-            }
-            
-            if (moveForward)
-            {
-                var forward = cameraPlayer.TransformDirection(Vector3.forward);
-                _characterController.SimpleMove(forward * speed);
-            }
         }
 
         #endregion

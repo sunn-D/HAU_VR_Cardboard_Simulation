@@ -1,6 +1,7 @@
 using UnityEngine;
+// ReSharper disable CheckNamespace
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class AutoSaveConfig : ScriptableObject
     {

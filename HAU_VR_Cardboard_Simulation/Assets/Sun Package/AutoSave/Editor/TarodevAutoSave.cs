@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+// ReSharper disable CheckNamespace
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     [CustomEditor(typeof(AutoSaveConfig))]
     public class TarodevAutoSave : Editor
@@ -30,18 +31,14 @@ namespace DunnGSunn
             while (true)
             {
                 if (_config != null) return;
-
+                
                 var path = GetConfigPath();
-
                 if (path == null)
                 {
-                    AssetDatabase.CreateAsset(CreateInstance<AutoSaveConfig>(),
-                        $"Assets/{nameof(AutoSaveConfig)}.asset");
-                    Debug.Log(
-                        "A config file has been created at the root of your project.<b> You can move this anywhere you'd like.</b>");
+                    AssetDatabase.CreateAsset(CreateInstance<AutoSaveConfig>(), $"Assets/{nameof(AutoSaveConfig)}.asset");
+                    Debug.Log("A config file has been created at the root of your project.<b> You can move this anywhere you'd like.</b>");
                     continue;
                 }
-
                 _config = AssetDatabase.LoadAssetAtPath<AutoSaveConfig>(path);
 
                 break;
@@ -50,8 +47,7 @@ namespace DunnGSunn
 
         private static string GetConfigPath()
         {
-            var paths = AssetDatabase.FindAssets(nameof(AutoSaveConfig)).Select(AssetDatabase.GUIDToAssetPath)
-                .Where(c => c.EndsWith(".asset")).ToList();
+            var paths = AssetDatabase.FindAssets(nameof(AutoSaveConfig)).Select(AssetDatabase.GUIDToAssetPath).Where(c => c.EndsWith(".asset")).ToList();
             if (paths.Count > 1) Debug.LogWarning("Multiple auto save config assets found. Delete one.");
             return paths.FirstOrDefault();
         }
@@ -70,8 +66,7 @@ namespace DunnGSunn
                 await Task.Delay(_config.Frequency * 1000 * 60, token);
                 if (_config == null) FetchConfig();
 
-                if (!_config.Enabled || Application.isPlaying || BuildPipeline.isBuildingPlayer ||
-                    EditorApplication.isCompiling) continue;
+                if (!_config.Enabled || Application.isPlaying || BuildPipeline.isBuildingPlayer || EditorApplication.isCompiling) continue;
                 if (!UnityEditorInternal.InternalEditorUtility.isApplicationActive) continue;
 
                 EditorSceneManager.SaveOpenScenes();
@@ -92,8 +87,7 @@ namespace DunnGSunn
         {
             DrawDefaultInspector();
             EditorGUILayout.Space();
-            EditorGUILayout.HelpBox("You can move this asset where ever you'd like.\nWith ❤, Tarodev.",
-                MessageType.Info);
+            EditorGUILayout.HelpBox("You can move this asset where ever you'd like.\nWith ❤, Tarodev.", MessageType.Info);
         }
     }
 }

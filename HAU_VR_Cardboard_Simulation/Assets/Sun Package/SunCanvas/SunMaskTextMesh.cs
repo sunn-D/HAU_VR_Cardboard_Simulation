@@ -1,34 +1,42 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class SunMaskTextMesh : MonoBehaviour
     {
-        [FoldoutGroup("Variables")]
-        public float maxWidth = -1;
-        [FoldoutGroup("Variables")]
-        public TextMeshProUGUI text;
-        [FoldoutGroup("Variables")]
-        public RectTransform textRect;
-        [FoldoutGroup("Variables")]
-        public bool playAfterInitialize;
+        #region Variables
 
+        //
+        [FoldoutGroup("Variables")]
+        [SerializeField] private float maxWidth = -1;
+        [FoldoutGroup("Variables")]
+        [SerializeField] private TextMeshProUGUI text;
+        [FoldoutGroup("Variables")]
+        [SerializeField] private RectTransform textRect;
+        [FoldoutGroup("Variables")]
+        [SerializeField] private bool playAfterInitialize;
+        
+        //
         [FoldoutGroup("Animation")] 
-        public Ease ease = Ease.Linear;
+        [SerializeField] private Ease ease = Ease.Linear;
         [FoldoutGroup("Animation")] 
-        public LoopType loopType = LoopType.Yoyo;
+        [SerializeField] private LoopType loopType = LoopType.Yoyo;
         [FoldoutGroup("Animation")] 
-        public float startDelay = 1f;
+        [SerializeField] private float startDelay = 1f;
         [FoldoutGroup("Animation")] 
-        public float intervalDelay = .75f;
+        [SerializeField] private float intervalDelay = .75f;
 
         //
         private Sequence _textSequence;
 
+        #endregion
+
+        #region Variables
+
+        //
         private void Reset()
         {
             textRect = transform.GetChild(0).GetComponent<RectTransform>();
@@ -36,33 +44,39 @@ namespace DunnGSunn
             maxWidth = transform.GetComponent<RectTransform>().sizeDelta.x;
         }
 
+        //
+        private void OnEnable()
+        {
+            _textSequence?.Play();
+        }
+
+        //
+        private void OnDisable()
+        {
+            _textSequence?.Pause();
+        }
+        
+        //
         public void Initialize(string textToShow)
         {
             UpdateTextSequence(textToShow);
             if (!playAfterInitialize) StopTextSequence();
             else PlayTextSequence();
         }
-
-        private void OnEnable()
-        {
-            _textSequence?.Play();
-        }
-
-        private void OnDisable()
-        {
-            _textSequence?.Pause();
-        }
-
+        
+        //
         public void PlayTextSequence()
         {
             _textSequence?.Play();
         }
 
+        //
         public void StopTextSequence()
         {
             _textSequence?.Pause();
         }
 
+        //
         public void UpdateTextSequence(string textToShow)
         {
             text.text = textToShow;
@@ -80,9 +94,12 @@ namespace DunnGSunn
             }
         }
 
+        //
         public void DestroySequence()
         {
             _textSequence.Kill(true);
         }
+
+        #endregion
     }
 }

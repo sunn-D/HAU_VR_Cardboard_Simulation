@@ -1,9 +1,11 @@
 ﻿using System.Collections;
-using DunnGSunn;
 using Manager;
 using Player;
+using Scriptables;
 using Sirenix.OdinInspector;
+using Sun_Package;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI_Controller.UI
@@ -11,17 +13,20 @@ namespace UI_Controller.UI
     public class UIFirstLoading : SunBaseUI
     {
         #region Variables
-
-        [FoldoutGroup("Variables")]
-        //
-        [FoldoutGroup("Variables/Configs")] 
-        public float delayFadedIn = 1f;
+        
         //
         [FoldoutGroup("Variables/Faded")] 
         public SmoothFaded smoothFaded;
         //
         [FoldoutGroup("Variables/Loading bar")]
         public Image loadingProcessBar;
+        
+        //
+        private float _currentProcess;
+        private float _targetProcess;
+        private bool _loadingScene;
+        private AsyncOperation _loadingAsync;
+        private AsyncOperation _unloadingAsync;
 
         #endregion
         
@@ -32,13 +37,19 @@ namespace UI_Controller.UI
         {
             //
             loadingProcessBar.fillAmount = 0f;
-            smoothFaded.OnFinishAction += UnloadFirstLoadingScene;
+            _loadingScene = false;
             
             //
-            if (usingTweenShow)
+            smoothFaded.OnFinishAction += () =>
             {
-                tweenShow.finishedEventWhen = EventWhen.Forward;
-                tweenShow.onFinished.AddListener(LoadMenuScene);
+                MainThread.Instance.StartCoroutine(UnloadLoadingScene(LoadingConfig.Instance.DelayAfterFadedIn));
+            };
+            
+            //
+            if (UsingTweenShow)
+            {
+                TweenShow.FinishedEventWhen = EventWhen.Forward;
+                TweenShow.OnFinishedEvent.AddListener(LoadMenuScene);
             }
             
             //
@@ -54,39 +65,51 @@ namespace UI_Controller.UI
         //
         public override void Hide()
         {
-            HideTemplate();
+            Destroy(gameObject);
         }
         
         //
         private void LoadMenuScene()
         {
-            MainCoroutineThread.Instance.StartCoroutine(SceneLoader.LoadMainScene(
-                null,
-                value =>
-                {
-                    loadingProcessBar.fillAmount = value;
-                }, () =>
+            _loadingAsync = SceneManager.LoadSceneAsync(LoadingConfig.Instance.MainSceneName, LoadSceneMode.Additive);
+            _loadingAsync.allowSceneActivation = false;
+            _loadingScene = true;
+        }
+
+        private void Update()
+        {
+            if (_loadingScene)
+            {
+                _targetProcess = _loadingAsync.progress / .9f;
+                _currentProcess = Mathf.MoveTowards(_currentProcess, _targetProcess, Time.deltaTime * LoadingConfig.Instance.ProcessAnimationMultiplier);
+                loadingProcessBar.fillAmount = _currentProcess;
+
+                if (Mathf.Approximately(_currentProcess , 1f))
                 {
                     smoothFaded.FadeOut();
-                }));
+                    _loadingScene = false;
+                }
+            }
         }
-        
+
         //
-        private void UnloadFirstLoadingScene()
+        private IEnumerator UnloadLoadingScene(float delayTime)
         {
-            MainCoroutineThread.Instance.StartCoroutine(SceneLoader.UnloadFirstLoadingScene(
-                null, null,
-                () =>
-                {
-                    MainCoroutineThread.Instance.StartCoroutine(DelayEventOnFinishUnloadingCoroutine(delayFadedIn));
-                }));
-        }
-        
-        //
-        private IEnumerator DelayEventOnFinishUnloadingCoroutine(float delayTime)
-        {
+            _loadingAsync.allowSceneActivation = true;
+
+            yield return new WaitForSeconds(.1f);
+            
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LoadingConfig.Instance.MainSceneName));
+            _unloadingAsync = SceneManager.UnloadSceneAsync(LoadingConfig.Instance.LoadingSceneName);
+
+            while (!_unloadingAsync.isDone)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            
             yield return new WaitForSeconds(delayTime);
             SunEventManager.EmitEvent(EventID.ScreenFadedIn);
+            Hide();
         }
 
         #endregion

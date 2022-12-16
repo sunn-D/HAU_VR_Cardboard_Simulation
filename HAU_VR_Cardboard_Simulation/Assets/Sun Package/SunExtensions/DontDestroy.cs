@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class DontDestroy : MonoBehaviour
     {

@@ -1,21 +1,24 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public abstract class SunMonoSingleton<T> : MonoBehaviour where T : SunMonoSingleton<T>
     {
-        #region Fields
+        #region Variables
 
-        [BoxGroup("Load")]
+        //
+        [FoldoutGroup("Load")]
         [SerializeField] private bool dontDestroyOnLoad;
 
+        //
         public static T Instance { get; private set; }
 
         #endregion
 
-        #region Unity callback functions
+        #region Functions
 
+        //
         private void Awake()
         {
             if (Instance == null)
@@ -33,9 +36,7 @@ namespace DunnGSunn
             }
         }
 
-        /// <summary>
-        /// Load trong hàm awake khi đã khởi tạo được instance
-        /// </summary>
+        //
         protected virtual void LoadInAwake() { }
 
         #endregion

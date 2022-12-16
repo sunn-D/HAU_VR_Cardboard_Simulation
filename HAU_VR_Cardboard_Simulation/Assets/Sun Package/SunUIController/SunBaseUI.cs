@@ -1,7 +1,7 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public abstract class SunBaseUI : MonoBehaviour
     {
@@ -10,9 +10,32 @@ namespace DunnGSunn
         [FoldoutGroup("Variables")]
         //
         [FoldoutGroup("Variables/Touch")]
-        public float lastTimeClick;
+        [SerializeField] private float lastTimeClick;
         [FoldoutGroup("Variables/Touch")] 
-        public float delayTimeClick = .5f;
+        [SerializeField] private float delayTimeClick = .5f;
+        //
+        [FoldoutGroup("Variables/UI config")] 
+        [SerializeField] private bool isDebug;
+        [FoldoutGroup("Variables/UI config")] 
+        [SerializeField] private bool initOnAwake;
+        //
+        [FoldoutGroup("Variables/Show - Hide")]
+        [SerializeField] private bool usingTweenShow;
+        [FoldoutGroup("Variables/Show - Hide")]
+        [SerializeField] private bool usingTweenHide;
+        [FoldoutGroup("Variables/Show - Hide"), ShowIf("usingTweenShow")]
+        [SerializeField] private SunTweenControl tweenShow;
+        [FoldoutGroup("Variables/Show - Hide"), ShowIf("usingTweenHide")]
+        [SerializeField] private SunTweenControl tweenHide;
+        
+        //
+        public bool UsingTweenShow => usingTweenShow;
+        public bool UsingTweenHide => usingTweenHide;
+        public SunTweenControl TweenShow => tweenShow;
+        public SunTweenControl TweenHide => tweenHide;
+
+        //
+        public bool IsShow { get; set; }
         public bool CanClick
         {
             get
@@ -22,24 +45,10 @@ namespace DunnGSunn
                 return result;
             }
         }
-        //
-        [FoldoutGroup("Variables/UI config")] 
-        public bool isDebug;
-        [FoldoutGroup("Variables/UI config")] 
-        public bool initOnAwake;
-        //
-        [FoldoutGroup("Variables/Show - Hide")]
-        public bool usingTweenShow;
-        [FoldoutGroup("Variables/Show - Hide")]
-        public bool usingTweenHide;
-        [FoldoutGroup("Variables/Show - Hide"), ShowIf("usingTweenShow")]
-        public SunTweenControl tweenShow;
-        [FoldoutGroup("Variables/Show - Hide"), ShowIf("usingTweenHide")]
-        public SunTweenControl tweenHide;
-        //
-        public bool IsShow { get; protected set; }
 
         #endregion
+
+        #region Functions
 
         // Unity callback function: Awake
         private void Awake()
@@ -98,5 +107,7 @@ namespace DunnGSunn
 
             IsShow = false;
         }
+
+        #endregion
     }
 }

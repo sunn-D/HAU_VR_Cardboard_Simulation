@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -12,21 +12,24 @@ namespace Player
         [FoldoutGroup("Variables")]
         //
         [FoldoutGroup("Variables/Configs")]
-        public float fadeDuration;
+        [SerializeField] private float fadeDuration = .5f;
         [FoldoutGroup("Variables/Configs")]
-        public Color fadeColor;
+        [SerializeField] private Color fadeColor = new Color(.6f, .6f, .6f, 0f);
         [FoldoutGroup("Variables/Configs")]
-        public bool fadeOnStart;
+        [SerializeField] private bool fadeOnStart;
         [FoldoutGroup("Variables/Configs")]
-        public bool colorOnStart;
+        [SerializeField] private bool colorOnStart;
         [FoldoutGroup("Variables/Configs")]
-        public bool enableBeforePlay;
+        [SerializeField] private bool enableBeforePlay;
         [FoldoutGroup("Variables/Configs")]
-        public bool disableAfterPlay;
+        [SerializeField] private bool disableAfterPlay;
         
         //
         public Action OnStartAction { get; set; }
         public Action OnFinishAction { get; set; }
+
+        //
+        public float FadeDuration => fadeDuration;
 
         //
         private Renderer _renderer;
@@ -40,13 +43,13 @@ namespace Player
         private void Start()
         {
             _renderer = GetComponent<Renderer>();
-            if (fadeOnStart) FadeIn();
             if (colorOnStart)
             {
                 var color = fadeColor;
                 color.a = 1f;
                 _renderer.material.SetColor(ColorMaterialField, color);
             }
+            if (fadeOnStart) FadeIn();
         }
         
         //
@@ -64,40 +67,29 @@ namespace Player
         //
         public void Fade(float alphaIn, float alphaOut)
         {
-            if (enableBeforePlay)
-            {
-                gameObject.SetActive(true);
-            }
-            StartCoroutine(FadeCoroutine(alphaIn, alphaOut));
-        }
-        
-        //
-        private IEnumerator FadeCoroutine(float alphaIn, float alphaOut)
-        {
-            var timer = 0f;
-            var startAction = OnStartAction;
-            OnStartAction = () => { };
-            startAction?.Invoke();
-
-            while (timer <= fadeDuration)
-            {
-                var newColor = fadeColor;
-                newColor.a = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
-                _renderer.material.SetColor(ColorMaterialField, newColor);
-                timer += Time.deltaTime;
-                yield return null;
-            }
+            var newColor = fadeColor;
+            newColor.a = alphaIn;
+            _renderer.material.SetColor(ColorMaterialField, newColor);
             
-            var color = fadeColor;
-            color.a = alphaOut;
-            _renderer.material.SetColor(ColorMaterialField, color);
-            var finishAction = OnFinishAction;
-            OnFinishAction = () => { };
-            finishAction?.Invoke();
-            if (disableAfterPlay)
-            {
-                gameObject.SetActive(false);
-            }
+            if (enableBeforePlay) gameObject.SetActive(true);
+            
+            var currentAlpha = alphaIn;
+                
+            DOTween.To(() => currentAlpha, x => currentAlpha = x, alphaOut, fadeDuration)
+                .SetEase(Ease.Linear)
+                .OnUpdate(() =>
+                {
+                    newColor = fadeColor;
+                    newColor.a = currentAlpha;
+                    _renderer.material.SetColor(ColorMaterialField, newColor);
+                })
+                .OnComplete(() =>
+                {
+                    var finishAction = OnFinishAction;
+                    OnFinishAction = () => { };
+                    finishAction?.Invoke();
+                    if (disableAfterPlay) gameObject.SetActive(false);
+                });
         }
 
         #endregion

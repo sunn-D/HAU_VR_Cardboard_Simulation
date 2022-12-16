@@ -1,118 +1,90 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
-    public class SunUniCipher : MonoBehaviour
+    public class SunUniCipher : SunMonoSingleton<SunUniCipher>
     {
-        private static SunUniCipher _instance;
+        #region Variables
 
-        public static SunUniCipher Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    var singletonObject = new GameObject();
-                    _instance = singletonObject.AddComponent<SunUniCipher>();
-                    singletonObject.name = "Sun UniCipher";
-                    Debug.Log("Create Sun UniCipher.");
-                }
+        //
+        [SerializeField] private string separator = "@";
+        
+        //
+        private List<string> _definitions = new List<string>();
 
-                return _instance;
-            }
-        }
+        #endregion
 
-        public string separator = "@";
-        private List<string> definitions = new List<string>();
+        #region Functions
 
-        private void Awake()
-        {
-            if (_instance != null && _instance.GetInstanceID() != GetInstanceID())
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                _instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-        }
-
+        //
         private void Start()
         {
-            definitions.Add("a-jkhd");
-            definitions.Add("A-htr4");
-            definitions.Add("b-4fdd");
-            definitions.Add("B-4hfd");
-            definitions.Add("c-980g");
-            definitions.Add("C-99fg");
-            definitions.Add("d-98fr");
-            definitions.Add("D-ffb4");
-            definitions.Add("e-njhk");
-            definitions.Add("E-dsh4");
-            definitions.Add("f-njhk");
-            definitions.Add("F-x8cx");
-            definitions.Add("g-jhhy");
-            definitions.Add("G-j56h");
-            definitions.Add("h-jkhu");
-            definitions.Add("H-j9fd");
-            definitions.Add("i-978f");
-            definitions.Add("I-764r");
-            definitions.Add("j-jnoi");
-            definitions.Add("J-9f8g");
-            definitions.Add("k-nhgf");
-            definitions.Add("K-fdjh");
-            definitions.Add("l-juy5");
-            definitions.Add("L-fd9f");
-            definitions.Add("m-jhki");
-            definitions.Add("M-fd98");
-            definitions.Add("n-h78d");
-            definitions.Add("N-mkol");
-            definitions.Add("o-980f");
-            definitions.Add("O-poj0");
-            definitions.Add("p-9fee");
-            definitions.Add("P-7yhg");
-            definitions.Add("q-jhgf");
-            definitions.Add("Q-jf56");
-            definitions.Add("r-kocv");
-            definitions.Add("R-jium");
-            definitions.Add("s-9ugf");
-            definitions.Add("S-klfs");
-            definitions.Add("t-lkgd");
-            definitions.Add("T-09uj");
-            definitions.Add("u-bfhg");
-            definitions.Add("U-76fg");
-            definitions.Add("v-234f");
-            definitions.Add("V-098g");
-            definitions.Add("w-hgnf");
-            definitions.Add("W-0976");
-            definitions.Add("x-75i8");
-            definitions.Add("X-876l");
-            definitions.Add("y-vfd8");
-            definitions.Add("Y-klnh");
-            definitions.Add("z-9gwe");
-            definitions.Add("Z-kljo");
-            definitions.Add("1-gfnj");
-            definitions.Add("2-mjhf");
-            definitions.Add("3-dwev");
-            definitions.Add("4-ogjh");
-            definitions.Add("5-mbhg");
-            definitions.Add("6-pfjn");
-            definitions.Add("7-9fjn");
-            definitions.Add("8-76yf");
-            definitions.Add("9-nmf9");
-            definitions.Add("0-3nfp");
+            _definitions.Add("a-jkhd");
+            _definitions.Add("A-htr4");
+            _definitions.Add("b-4fdd");
+            _definitions.Add("B-4hfd");
+            _definitions.Add("c-980g");
+            _definitions.Add("C-99fg");
+            _definitions.Add("d-98fr");
+            _definitions.Add("D-ffb4");
+            _definitions.Add("e-njhk");
+            _definitions.Add("E-dsh4");
+            _definitions.Add("f-njhk");
+            _definitions.Add("F-x8cx");
+            _definitions.Add("g-jhhy");
+            _definitions.Add("G-j56h");
+            _definitions.Add("h-jkhu");
+            _definitions.Add("H-j9fd");
+            _definitions.Add("i-978f");
+            _definitions.Add("I-764r");
+            _definitions.Add("j-jnoi");
+            _definitions.Add("J-9f8g");
+            _definitions.Add("k-nhgf");
+            _definitions.Add("K-fdjh");
+            _definitions.Add("l-juy5");
+            _definitions.Add("L-fd9f");
+            _definitions.Add("m-jhki");
+            _definitions.Add("M-fd98");
+            _definitions.Add("n-h78d");
+            _definitions.Add("N-mkol");
+            _definitions.Add("o-980f");
+            _definitions.Add("O-poj0");
+            _definitions.Add("p-9fee");
+            _definitions.Add("P-7yhg");
+            _definitions.Add("q-jhgf");
+            _definitions.Add("Q-jf56");
+            _definitions.Add("r-kocv");
+            _definitions.Add("R-jium");
+            _definitions.Add("s-9ugf");
+            _definitions.Add("S-klfs");
+            _definitions.Add("t-lkgd");
+            _definitions.Add("T-09uj");
+            _definitions.Add("u-bfhg");
+            _definitions.Add("U-76fg");
+            _definitions.Add("v-234f");
+            _definitions.Add("V-098g");
+            _definitions.Add("w-hgnf");
+            _definitions.Add("W-0976");
+            _definitions.Add("x-75i8");
+            _definitions.Add("X-876l");
+            _definitions.Add("y-vfd8");
+            _definitions.Add("Y-klnh");
+            _definitions.Add("z-9gwe");
+            _definitions.Add("Z-kljo");
+            _definitions.Add("1-gfnj");
+            _definitions.Add("2-mjhf");
+            _definitions.Add("3-dwev");
+            _definitions.Add("4-ogjh");
+            _definitions.Add("5-mbhg");
+            _definitions.Add("6-pfjn");
+            _definitions.Add("7-9fjn");
+            _definitions.Add("8-76yf");
+            _definitions.Add("9-nmf9");
+            _definitions.Add("0-3nfp");
         }
-
-        private void OnDestroy()
-        {
-            if (_instance == this)
-            {
-                _instance = null;
-            }
-        }
-
+        
+        //
         public string Encrypt(string text)
         {
             var result = "";
@@ -123,7 +95,8 @@ namespace DunnGSunn
 
             return result;
         }
-
+        
+        //
         public string Decrypt(string text)
         {
             var enctext = text.Split(char.Parse(separator));
@@ -135,10 +108,11 @@ namespace DunnGSunn
 
             return result;
         }
-
+        
+        //
         public string CharEncrypt(char c)
         {
-            foreach (var definition in definitions)
+            foreach (var definition in _definitions)
             {
                 if (char.Parse(definition.Split('-')[0]) == c)
                 {
@@ -148,10 +122,11 @@ namespace DunnGSunn
 
             return c + separator;
         }
-
+        
+        //
         public string CharDecrypt(string part)
         {
-            foreach (var definition in definitions)
+            foreach (var definition in _definitions)
             {
                 if (definition.Split('-')[1] == part)
                 {
@@ -161,5 +136,7 @@ namespace DunnGSunn
 
             return part;
         }
+
+        #endregion
     }
 }

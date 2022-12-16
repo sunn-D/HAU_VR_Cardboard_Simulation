@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace DunnGSunn
+namespace Sun_Package
 {
     public class SunPooler : SunMonoSingleton<SunPooler>
     {
@@ -15,11 +14,19 @@ namespace DunnGSunn
             public int size;
         }
 
-        [FoldoutGroup("Pools")] public List<Pool> pools;
+        #region Variables
 
         //
-        public Dictionary<string, Queue<GameObject>> poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        [SerializeField] private List<Pool> pools;
+        
+        //
+        public Dictionary<string, Queue<GameObject>> PoolDictionary { get; set; } = new Dictionary<string, Queue<GameObject>>();
 
+        #endregion
+
+        #region Functions
+
+        //
         private void Start()
         {
             foreach (var pool in pools)
@@ -32,26 +39,27 @@ namespace DunnGSunn
                     objPool.Enqueue(obj);
                 }
 
-                poolDictionary.Add(pool.tag, objPool);
+                PoolDictionary.Add(pool.tag, objPool);
             }
         }
-
+        
+        //
         public static GameObject SpawnFromPool(string tagValue, Vector3 position, Quaternion rotation)
         {
-            if (Instance.poolDictionary.ContainsKey(tagValue))
+            if (Instance.PoolDictionary.ContainsKey(tagValue))
             {
-                if (Instance.poolDictionary[tagValue].Count == 0)
+                if (Instance.PoolDictionary[tagValue].Count == 0)
                 {
                     var pool = Instance.pools.Find(p => p.tag == tagValue);
                     for (var i = 0; i < pool.size; i++)
                     {
                         var obj = Instantiate(pool.prefab, Instance.transform);
                         obj.SetActive(false);
-                        Instance.poolDictionary[tagValue].Enqueue(obj);
+                        Instance.PoolDictionary[tagValue].Enqueue(obj);
                     }
                 }
 
-                var objToSpawn = Instance.poolDictionary[tagValue].Dequeue();
+                var objToSpawn = Instance.PoolDictionary[tagValue].Dequeue();
                 objToSpawn.SetActive(true);
                 objToSpawn.transform.SetPositionAndRotation(position, rotation);
                 return objToSpawn;
@@ -62,23 +70,24 @@ namespace DunnGSunn
                 return null;
             }
         }
-
+        
+        //
         public static GameObject SpawnFromPool(string tagValue, Transform parent)
         {
-            if (Instance.poolDictionary.ContainsKey(tagValue))
+            if (Instance.PoolDictionary.ContainsKey(tagValue))
             {
-                if (Instance.poolDictionary[tagValue].Count == 0)
+                if (Instance.PoolDictionary[tagValue].Count == 0)
                 {
                     var pool = Instance.pools.Find(p => p.tag == tagValue);
                     for (var i = 0; i < pool.size; i++)
                     {
                         var obj = Instantiate(pool.prefab, Instance.transform);
                         obj.SetActive(false);
-                        Instance.poolDictionary[tagValue].Enqueue(obj);
+                        Instance.PoolDictionary[tagValue].Enqueue(obj);
                     }
                 }
 
-                var objToSpawn = Instance.poolDictionary[tagValue].Dequeue();
+                var objToSpawn = Instance.PoolDictionary[tagValue].Dequeue();
                 objToSpawn.SetActive(true);
                 objToSpawn.transform.SetParent(parent);
                 objToSpawn.transform.SetPositionAndRotation(parent.position, parent.rotation);
@@ -90,18 +99,21 @@ namespace DunnGSunn
                 return null;
             }
         }
-
+        
+        //
         public static void AddToPool(string tagValue, GameObject objToAdd)
         {
-            if (Instance.poolDictionary.ContainsKey(tagValue))
+            if (Instance.PoolDictionary.ContainsKey(tagValue))
             {
                 objToAdd.SetActive(false);
-                Instance.poolDictionary[tagValue].Enqueue(objToAdd);
+                Instance.PoolDictionary[tagValue].Enqueue(objToAdd);
             }
             else
             {
                 Debug.LogWarning("Tag not exist in pool.");
             }
         }
+
+        #endregion
     }
 }

@@ -1,4 +1,4 @@
-﻿using DunnGSunn;
+﻿using Sun_Package;
 using UnityEngine;
 
 namespace UI_Controller.UI
