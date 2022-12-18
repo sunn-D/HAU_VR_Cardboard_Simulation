@@ -1011,8 +1011,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Sun Package/SunSingleton/SunMonoSingleton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Sun Package/SunSingleton/SunScriptableSingleton.cs" />
       <option value="$PROJECT_DIR$/Assets/Sun Package/SunUIController/SunBaseUIController.cs" />
       <option value="$PROJECT_DIR$/Assets/Sun Package/SunTweenUI/SunTweenAlpha.cs" />
       <option value="$PROJECT_DIR$/Assets/Sun Package/SunTweenUI/SunTween.cs" />
@@ -1062,6 +1060,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Scriptables/LoadingConfig.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI Controller/UI/UIFirstLoading.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/Teleport.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Object Controller/TeleportController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2FXjBnORWlGqflQifqzI6HQMmNA" />
