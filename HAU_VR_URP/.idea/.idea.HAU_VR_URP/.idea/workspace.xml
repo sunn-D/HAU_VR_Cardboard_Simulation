@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f3b58c80-704c-45ba-a02c-4ccf8f253c03" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/CameraOffset.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Plugins/Android/gradleTemplate.properties" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Android/mainTemplate.gradle" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Controller/UIBehavior.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Controller/BaseRaycaster.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Controller/GvrBasePointerRaycaster.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Controller/OutsidePointerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/IPointerAction.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/MeshSortingLayer/Editor/MeshRendererSortingLayersEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/MeshSortingLayer/Editor/MeshRendererSortingEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/AutoSave/Editor/AutoSaveConfig.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/AutoSave/Editor/TarodevAutoSave.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/AutoSave/Editor/AutoSave.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/CreateAssetBundles/Editor/CreateAssetBundles.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/FadeGroup/FadeGroup.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/FadeGroup/FadeObjectBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/FadeGroup/FadeParticleRenderer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/FadeGroup/FadeSpriteRenderer.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunExtensions/SunEncryptString.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunExtensions/SunExtensions.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunSingleton/SunMonoSingleton.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunTweenUI/SunTween.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerConfigValue.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/OutsidePointerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerOutsidePointer.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Mode Controller/VREditorEmulator.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Extensions/BillBoardObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerPointerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunEventManager/SunEventManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerController.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="2JeDfr7Bpnoenf0IVLFlUNmjdX5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
