@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace HAU_VR_Cardboard.Scripts.Player_Controller
 {
     public class PlayerPointerController : MonoBehaviour
     {
         #region Variables
+
+        //
+        public TextMeshPro textMeshPro;
         
         //
         public PlayerConfigValue PlayerConfig { get; set; }
@@ -64,12 +68,14 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                     {
                         _gazerStatus = true;
                         _raycastHit.transform.GetComponent<IPointerAction>()?.OnPointerEnter();
+                        textMeshPro.text = _raycastHit.transform.name;
                         _playerOutsidePointer.SetFillAmount(0f);
                         _playerOutsidePointer.gameObject.SetActive(true);
                     }
                     
                     //
                     _currentGazerTimer -= Time.deltaTime;
+                    textMeshPro.text = _currentGazerTimer.ToString();
                     var percent = (PlayerConfig.MaxGazerTime - _currentGazerTimer) / PlayerConfig.MaxGazerTime;
                     _playerOutsidePointer.SetFillAmount(percent);
                     

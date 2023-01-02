@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/HAU VR Cardboard/Scenes/Main Scene.unity
+    guid: 228c467c2cfbe4c408c2932fe17c015c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 91ce11e26e066c145aa233da5804e7d1, type: 2}
