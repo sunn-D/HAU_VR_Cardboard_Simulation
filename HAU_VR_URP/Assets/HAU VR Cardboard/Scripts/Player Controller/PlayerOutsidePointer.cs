@@ -10,6 +10,8 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         //
         [FoldoutGroup("Variables")]
         [SerializeField, Range(0, 360)] private int fillAmount;
+        [FoldoutGroup("Variables")] 
+        [SerializeField] private SpriteRenderer targetRenderer;
         
         //
         public int FillAmount
@@ -17,36 +19,40 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
             get => fillAmount;
             set => fillAmount = value;
         }
+        public SpriteRenderer TargetRenderer
+        {
+            get => targetRenderer;
+            set => targetRenderer = value;
+        }
 
         //
-        private SpriteRenderer _targetRenderer;
         private Material _targetMaterial;
         private static readonly int Arc2 = Shader.PropertyToID("_Arc2");
 
         #endregion
 
         #region Functions
-
-        //
-        private void Reset()
-        {
-            _targetRenderer = GetComponent<SpriteRenderer>();
-            _targetMaterial = _targetRenderer.sharedMaterial;
-        }
         
         //
         private void OnValidate()
         {
-            if (_targetRenderer == null) _targetRenderer = GetComponent<SpriteRenderer>();
-            if (_targetMaterial == null) _targetMaterial = _targetRenderer.sharedMaterial;
+            if (TargetRenderer == null) TargetRenderer = transform.Find("Outside Pointer").GetComponent<SpriteRenderer>();
+            if (_targetMaterial == null) _targetMaterial = TargetRenderer.sharedMaterial;
             _targetMaterial.SetFloat(Arc2, 360 - FillAmount);
         }
         
         //
         public void SetFillAmount(float percent)
         {
+            if (_targetMaterial == null) _targetMaterial = TargetRenderer.sharedMaterial;
             FillAmount = Mathf.RoundToInt(360 * percent);
             _targetMaterial.SetFloat(Arc2, 360 - FillAmount);
+        }
+        
+        //
+        public void SetActiveRenderer(bool value)
+        {
+            TargetRenderer.gameObject.SetActive(value);
         }
 
         #endregion

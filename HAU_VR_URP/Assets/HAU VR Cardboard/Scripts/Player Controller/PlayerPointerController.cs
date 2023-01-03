@@ -1,4 +1,4 @@
-﻿using TMPro;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace HAU_VR_Cardboard.Scripts.Player_Controller
@@ -6,15 +6,33 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
     public class PlayerPointerController : MonoBehaviour
     {
         #region Variables
+        
+        //
+        [FoldoutGroup("Variables")] 
+        [SerializeField] private PlayerOutsidePointer outPointer;
+        [FoldoutGroup("Variables")]
+        [SerializeField] private PlayerSmoothFade smoothFade;
+        [FoldoutGroup("Variables")] 
+        [SerializeField] private PlayerTextLogging textLogging;
+        
+        //
+        public PlayerOutsidePointer OutPointer
+        {
+            get => outPointer;
+            set => outPointer = value;
+        }
+        public PlayerSmoothFade SmoothFade
+        {
+            get => smoothFade;
+            set => smoothFade = value;
+        }
+        public PlayerTextLogging TextLogging
+        {
+            get => textLogging;
+            set => textLogging = value;
+        }
 
         //
-        public TextMeshPro textMeshPro;
-        
-        //
-        public PlayerConfigValue PlayerConfig { get; set; }
-        
-        //
-        private PlayerOutsidePointer _playerOutsidePointer;
         private RaycastHit _raycastHit;
         private GameObject _gazeAtObject;
         private float _currentGazerTimer;
@@ -24,26 +42,29 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #endregion
 
         #region Functions
-        
-        //
-        private void Reset()
-        {
-            if (_playerOutsidePointer == null) _playerOutsidePointer = GetComponentInChildren<PlayerOutsidePointer>();
-        }
 
         //
         private void Start()
         {
-            if (_playerOutsidePointer == null) _playerOutsidePointer = GetComponentInChildren<PlayerOutsidePointer>();
-            PlayerConfig = PlayerConfigValue.Instance;
+            //
+            if (OutPointer == null) OutPointer = GetComponentInChildren<PlayerOutsidePointer>();
+            if (SmoothFade == null) SmoothFade = GetComponentInChildren<PlayerSmoothFade>();
+            if (TextLogging == null) TextLogging = GetComponentInChildren<PlayerTextLogging>();
+            
+            //
             ResetGazer();
+            
+            //
+            _currentDelayTimer = PlayerConfigValue.Instance.DelayGazeTime;
+            _currentGazerTimer = PlayerConfigValue.Instance.MaxGazerTime;
         }
 
         //
         private void ResetGazer()
         {
-            _playerOutsidePointer.gameObject.SetActive(false);
-            _currentGazerTimer = PlayerConfig.MaxGazerTime;
+            OutPointer.SetActiveRenderer(false);
+            TextLogging.SetActiveTextMesh(false);
+            _currentGazerTimer = PlayerConfigValue.Instance.MaxGazerTime;
             _gazerStatus = false;
         }
 
@@ -56,7 +77,7 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                 return;
             }
             
-            if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, PlayerConfig.MaxDistanceRay, PlayerConfig.LayerMaskRay))
+            if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, PlayerConfigValue.Instance.MaxDistanceRay, PlayerConfigValue.Instance.LayerMaskRay))
             {
                 if (_gazeAtObject != _raycastHit.transform.gameObject)
                 {
@@ -67,37 +88,36 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                     if (!_gazerStatus)
                     {
                         _gazerStatus = true;
-                        _raycastHit.transform.GetComponent<IPointerAction>()?.OnPointerEnter();
-                        textMeshPro.text = _raycastHit.transform.name;
-                        _playerOutsidePointer.SetFillAmount(0f);
-                        _playerOutsidePointer.gameObject.SetActive(true);
+                        _gazeAtObject = _raycastHit.transform.gameObject;
+                        _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerEnter();
+                        OutPointer.SetFillAmount(0f);
+                        OutPointer.SetActiveRenderer(true);
+                        TextLogging.SetTextLogging("");
+                        TextLogging.SetActiveTextMesh(true);
                     }
                     
                     //
                     _currentGazerTimer -= Time.deltaTime;
-                    textMeshPro.text = _currentGazerTimer.ToString();
-                    var percent = (PlayerConfig.MaxGazerTime - _currentGazerTimer) / PlayerConfig.MaxGazerTime;
-                    _playerOutsidePointer.SetFillAmount(percent);
+                    TextLogging.SetTextLogging(_gazeAtObject.name + " " + _currentGazerTimer.ToString("0.00"));
+                    var percent = (PlayerConfigValue.Instance.MaxGazerTime - _currentGazerTimer) / PlayerConfigValue.Instance.MaxGazerTime;
+                    OutPointer.SetFillAmount(percent);
                     
                     //
                     if (_currentGazerTimer <= 0)
                     {
                         // Message pointer exit
-                        if (_gazeAtObject != null)
-                        {
-                            var currentIPointer = _gazeAtObject.GetComponent<IPointerAction>();
-                            currentIPointer?.OnPointerExit();
-                        }
+                        if (_gazeAtObject != null) _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerExit();
+                        
+                        TextLogging.SetActiveTextMesh(false);
             
                         // Refer gazer object
                         _gazeAtObject = _raycastHit.transform.gameObject;
                     
                         // Message pointer enter
-                        var newIPointer = _gazeAtObject.GetComponent<IPointerAction>();
-                        newIPointer?.OnPointerClick();
+                        _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerClick();
                         
                         // Reset gazer
-                        _currentDelayTimer = PlayerConfig.DelayGazeTime;
+                        _currentDelayTimer = PlayerConfigValue.Instance.DelayGazeTime;
                         ResetGazer();
                     }
                 }
@@ -107,13 +127,9 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                 // Message pointer exit
                 if (_gazeAtObject != null)
                 {
-                    var currentIPointer = _gazeAtObject.GetComponent<IPointerAction>();
-                    currentIPointer?.OnPointerExit();
+                    _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerExit();
+                    TextLogging.SetActiveTextMesh(false);
                 }
-                
-                // Reset object and gazer timer
-                _gazeAtObject = null;
-                _currentGazerTimer = PlayerConfig.MaxGazerTime;
                 
                 //
                 if (_gazerStatus)
