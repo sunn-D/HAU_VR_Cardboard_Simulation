@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using HAU_VR_Cardboard.Scripts.Scriptables;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace HAU_VR_Cardboard.Scripts.Player_Controller
@@ -8,29 +9,14 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Variables
         
         //
-        [FoldoutGroup("Variables")] 
-        [SerializeField] private PlayerOutsidePointer outPointer;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private PlayerSmoothFade smoothFade;
-        [FoldoutGroup("Variables")] 
-        [SerializeField] private PlayerTextLogging textLogging;
-        
-        //
-        public PlayerOutsidePointer OutPointer
-        {
-            get => outPointer;
-            set => outPointer = value;
-        }
-        public PlayerSmoothFade SmoothFade
-        {
-            get => smoothFade;
-            set => smoothFade = value;
-        }
-        public PlayerTextLogging TextLogging
-        {
-            get => textLogging;
-            set => textLogging = value;
-        }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField] public PlayerOutsidePointer OutPointer { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public PlayerSmoothFade SmoothFade { get; set; }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField] public PlayerTextLogging TextLogging { get; set; }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField] public GameObject DebugWindow { get; set; }
 
         //
         private RaycastHit _raycastHit;
@@ -38,25 +24,32 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         private float _currentGazerTimer;
         private float _currentDelayTimer;
         private bool _gazerStatus;
+        private bool _isInitialized;
         
         #endregion
 
         #region Functions
 
         //
-        private void Start()
+        private void Reset()
         {
-            //
             if (OutPointer == null) OutPointer = GetComponentInChildren<PlayerOutsidePointer>();
             if (SmoothFade == null) SmoothFade = GetComponentInChildren<PlayerSmoothFade>();
             if (TextLogging == null) TextLogging = GetComponentInChildren<PlayerTextLogging>();
-            
+            if (DebugWindow == null) DebugWindow = transform.Find("VR Debug Window").gameObject;
+        }
+
+        //
+        public void Initialize()
+        {
             //
             ResetGazer();
             
             //
             _currentDelayTimer = PlayerConfigValue.Instance.DelayGazeTime;
             _currentGazerTimer = PlayerConfigValue.Instance.MaxGazerTime;
+
+            _isInitialized = true;
         }
 
         //
@@ -71,6 +64,8 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         //
         private void Update()
         {
+            if (!_isInitialized) return;
+            
             if (_currentDelayTimer > 0)
             {
                 _currentDelayTimer -= Time.deltaTime;
@@ -142,6 +137,8 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         // 
         private void OnDrawGizmos()
         {
+            if (!_isInitialized) return;
+            
             Gizmos.color = Color.black;
             Gizmos.DrawLine(transform.position, transform.position + transform.forward * PlayerConfigValue.Instance.MaxDistanceRay);
         }

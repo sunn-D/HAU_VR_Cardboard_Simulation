@@ -16,6 +16,10 @@ namespace Sun_Package
         // Event Teleport
         public const string Teleport_OnTeleportClicked = "Teleport_OnTeleportClicked";
         public const string Teleport_OnTeleportPlayer = "Teleport_OnTeleportPlayer";
+        
+        // Event Screen
+        public const string Screen_FadedIn = "Screen_FadedIn";
+        public const string Screen_FadedOut = "Screen_FadedOut";
     }
 
     public static class SunEventManager

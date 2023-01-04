@@ -92,7 +92,7 @@ namespace Player
         //
         private void ScreenFadedIn()
         {
-            smoothFaded.FadeIn();
+            smoothFaded.FadeIn();   
         }
 
         #endregion

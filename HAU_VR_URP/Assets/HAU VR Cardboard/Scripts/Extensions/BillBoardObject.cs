@@ -11,36 +11,14 @@ namespace HAU_VR_Cardboard.Scripts.Extensions
         public enum BillboardTypeEnum { LookAtCamera, CameraForward };
         
         //
-        [FoldoutGroup("Variables")]
-        [SerializeField] private BillboardTypeEnum billboardType;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private bool lockX;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private bool lockY;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private bool lockZ;
-        
-        //
-        public BillboardTypeEnum BillboardType
-        {
-            get => billboardType;
-            set => billboardType = value;
-        }
-        public bool LockX
-        {
-            get => lockX;
-            set => lockX = value;
-        }
-        public bool LockY
-        {
-            get => lockY;
-            set => lockY = value;
-        }
-        public bool LockZ
-        {
-            get => lockZ;
-            set => lockZ = value;
-        }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public BillboardTypeEnum BillboardType { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public bool LockX { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public bool LockY { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public bool LockZ { get; set; }
 
         //
         private Vector3 _originalRotation;
@@ -60,6 +38,7 @@ namespace HAU_VR_Cardboard.Scripts.Extensions
         //
         private void LateUpdate()
         {
+            //
             switch (BillboardType) {
                 case BillboardTypeEnum.LookAtCamera:
                     transform.LookAt(_cameraMain.transform.position, Vector3.up);
@@ -69,10 +48,11 @@ namespace HAU_VR_Cardboard.Scripts.Extensions
                     break;
             }
 
+            //
             var rotation = transform.rotation.eulerAngles;
-            if (lockX) { rotation.x = _originalRotation.x; }
-            if (lockY) { rotation.y = _originalRotation.y; }
-            if (lockZ) { rotation.z = _originalRotation.z; }
+            if (LockX) { rotation.x = _originalRotation.x; }
+            if (LockY) { rotation.y = _originalRotation.y; }
+            if (LockZ) { rotation.z = _originalRotation.z; }
             transform.rotation = Quaternion.Euler(rotation);
         }
 

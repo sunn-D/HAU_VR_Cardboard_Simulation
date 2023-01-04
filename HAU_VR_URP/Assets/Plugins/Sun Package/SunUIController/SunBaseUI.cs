@@ -44,6 +44,28 @@ namespace Sun_Package
         }
         
         //
+        public bool UsingTweenShow
+        {
+            get => usingTweenShow;
+            set => usingTweenShow = value;
+        }
+        public bool UsingTweenHide
+        {
+            get => usingTweenHide;
+            set => usingTweenHide = value;
+        }
+        public SunTweenControl TweenShow
+        {
+            get => tweenShow;
+            set => tweenShow = value;
+        }
+        public SunTweenControl TweenHide
+        {
+            get => tweenHide;
+            set => tweenHide = value;
+        }
+
+        //
         private float _lastTimeClick;
         private Rect _lastSafeArea = new Rect(0f, 0f, 0f, 0f);
         private Vector2Int _lastScreenSize = new Vector2Int(0, 0);

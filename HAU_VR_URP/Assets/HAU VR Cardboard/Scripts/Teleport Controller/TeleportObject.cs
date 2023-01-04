@@ -11,47 +11,27 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         #region Variables
 
         //
-        [FoldoutGroup("Variables")]
-        [SerializeField] private int teleportID;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private bool isFirstTeleport;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private BoxCollider teleCollider;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private SpriteRenderer teleRenderer;
-        [FoldoutGroup("Variables")]
-        [SerializeField] private Vector3 telePoint;
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public int TeleportID { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public bool IsFirstTeleport { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public Vector3 TelePoint { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public BoxCollider TeleCollider { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public Transform TeleTransform { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public SpriteRenderer TeleRenderer { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public SpriteRenderer GroundRenderer { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public ParticleSystem ParticleFX { get; set; }
 
         //
-        public int TeleportID
-        {
-            get => teleportID;
-            set => teleportID = value;
-        }
-        public bool IsFirstTeleport
-        {
-            get => isFirstTeleport;
-            set => isFirstTeleport = value;
-        }
-        public BoxCollider TeleCollider
-        {
-            get => teleCollider;
-            set => teleCollider = value;
-        }
-        public SpriteRenderer TeleRenderer
-        {
-            get => teleRenderer;
-            set => teleRenderer = value;
-        }
-        public Vector3 TelePoint
-        {
-            get => telePoint;
-            set => telePoint = value;
-        }
-        
-        //
-        private Sequence _tweenTeleport;
-        private Tweener _tweenColor;
+        private Sequence _tweenRenderTeleport;
+        private Tweener _tweenColorTeleport;
+        private Tweener _tweenColorGround;
         private bool _isDisable;
         
         //
@@ -67,19 +47,31 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         private void Reset()
         {
             TeleportID = gameObject.name.Split(' ')[1].TryParseInt();
-            TeleCollider = GetComponent<BoxCollider>();
-            TeleRenderer = GetComponent<SpriteRenderer>();
             TelePoint = transform.position;
+            TeleCollider = GetComponent<BoxCollider>();
+            TeleTransform = transform.Find("Render Teleport").transform;
+            TeleRenderer = transform.Find("Render Teleport").GetComponent<SpriteRenderer>();
+            GroundRenderer = transform.Find("Render Ground").GetComponent<SpriteRenderer>();
+            ParticleFX = GetComponentInChildren<ParticleSystem>();
         }
         
         //
         public void Initialize()
         {
-            _tweenTeleport = DOTween.Sequence();
-            _tweenTeleport.Append(transform.DOMoveY(1.25f, .75f).SetRelative().SetEase(Ease.Linear));
-            _tweenTeleport.AppendInterval(.5f);
-            _tweenTeleport.SetLoops(-1, LoopType.Yoyo);
-            _tweenTeleport.Play();
+            //
+            _tweenRenderTeleport = DOTween.Sequence();
+            _tweenRenderTeleport.Append(TeleTransform.DOMoveY(0f, .75f).SetEase(Ease.Linear));
+            _tweenRenderTeleport.AppendInterval(.5f);
+            _tweenRenderTeleport.SetLoops(-1, LoopType.Yoyo);
+            _tweenRenderTeleport.Play();
+            
+            //
+            _tweenColorGround = GroundRenderer.DOColor(TransparentColor, 2f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
+            _tweenColorGround.Play();
+            
+            //
+            ParticleFX.Play();
+            GroundRenderer.transform.localScale = Vector3.one * 2;
         }
         
         //
@@ -87,15 +79,19 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         {
             TeleRenderer.color = NormalColor;
             TeleCollider.enabled = true;
-            _tweenTeleport?.Play();
+            ParticleFX.Play();
+            GroundRenderer.transform.localScale = Vector3.one * 2;
+            _tweenRenderTeleport?.Play();
             _isDisable = false;
         }
         
         //
         public void DisableTeleport()
         {
-            _tweenColor?.Kill();
-            _tweenTeleport?.Pause();
+            _tweenColorTeleport?.Kill();
+            _tweenRenderTeleport?.Pause();
+            ParticleFX.Stop();
+            GroundRenderer.transform.localScale = Vector3.one;
             TeleRenderer.color = TransparentColor;
             TeleCollider.enabled = false;
         }
@@ -107,8 +103,8 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         //
         public void OnPointerEnter()
         {
-            _tweenColor?.Kill();
-            _tweenColor = TeleRenderer.DOColor(PointEnterColor, .25f);
+            _tweenColorTeleport?.Kill();
+            _tweenColorTeleport = TeleRenderer.DOColor(PointEnterColor, .25f);
         }
 
         //
@@ -117,15 +113,15 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             SunEventManager.EmitEvent(EventID.Teleport_OnTeleportClicked, sender: TeleportID);
             SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: TelePoint);
             _isDisable = true;
-            Debug.Log("Teleport player and set status of this teleport point.");
+            Debug.Log($"Teleport player and set status of Teleport {TeleportID} point.");
         }
 
         //
         public void OnPointerExit()
         {
             if (_isDisable) return;
-            _tweenColor?.Kill();
-            _tweenColor = TeleRenderer.DOColor(NormalColor, .25f);
+            _tweenColorTeleport?.Kill();
+            _tweenColorTeleport = TeleRenderer.DOColor(NormalColor, .25f);
         }
 
         #endregion

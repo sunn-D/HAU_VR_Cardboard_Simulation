@@ -8,22 +8,10 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Variables
 
         //
-        [FoldoutGroup("Variables")]
-        [SerializeField, Range(0, 360)] private int fillAmount;
-        [FoldoutGroup("Variables")] 
-        [SerializeField] private SpriteRenderer targetRenderer;
-        
-        //
-        public int FillAmount
-        {
-            get => fillAmount;
-            set => fillAmount = value;
-        }
-        public SpriteRenderer TargetRenderer
-        {
-            get => targetRenderer;
-            set => targetRenderer = value;
-        }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField, Range(0, 360)] public int FillAmount { get; set; }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField] public SpriteRenderer TargetRenderer { get; set; }
 
         //
         private Material _targetMaterial;
@@ -42,9 +30,15 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         }
         
         //
+        private void Start()
+        {
+            if (TargetRenderer == null) TargetRenderer = transform.Find("Outside Pointer").GetComponent<SpriteRenderer>();
+            if (_targetMaterial == null) _targetMaterial = TargetRenderer.sharedMaterial;
+        }
+
+        //
         public void SetFillAmount(float percent)
         {
-            if (_targetMaterial == null) _targetMaterial = TargetRenderer.sharedMaterial;
             FillAmount = Mathf.RoundToInt(360 * percent);
             _targetMaterial.SetFloat(Arc2, 360 - FillAmount);
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Sirenix.OdinInspector;
 using Sun_Package;
@@ -12,15 +11,8 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         #region Variables
 
         //
-        [FoldoutGroup("Variables")] 
-        [SerializeField] private List<TeleportObject> listTeleObjects;
-        
-        //
-        public List<TeleportObject> ListTeleObjects
-        {
-            get => listTeleObjects;
-            set => listTeleObjects = value;
-        }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField] public List<TeleportObject> ListTeleObjects { get; set; }
         
         //
         public int StartTeleportID { get; set; }
@@ -32,19 +24,22 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         #region Functions
         
         //
-        private void Reset()
+        [Button(ButtonSizes.Large)] 
+        public void GetAllTeleportObject()
         {
-            listTeleObjects = GameObject.FindObjectsOfType<TeleportObject>().ToList();
+            var allTeleportObject = GameObject.FindObjectsOfType<TeleportObject>().ToList();
+            allTeleportObject.Sort((t1, t2) =>
+            {
+                if (t1.TeleportID < t2.TeleportID) return -1;
+                if (t1.TeleportID > t2.TeleportID) return 1;
+                return 0;
+            });
+            ListTeleObjects = allTeleportObject;
         }
 
         //
         protected override void LoadInStart()
         {
-            if (ListTeleObjects == null || ListTeleObjects.Count == 0)
-            {
-                listTeleObjects = GameObject.FindObjectsOfType<TeleportObject>().ToList();
-            }
-
             if (ListTeleObjects != null)
             {
                 foreach (var teleportObject in ListTeleObjects)
@@ -65,8 +60,19 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             }
             
             SunEventManager.StartListening(EventID.Teleport_OnTeleportClicked, OnTeleportClicked);
+            
+            //
+            TeleportToFirstTeleportPoint();
         }
 
+        //
+        public void TeleportToFirstTeleportPoint()
+        {
+            CurrentTeleportObject.DisableTeleport();
+            SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: CurrentTeleportObject.TelePoint);
+        }
+        
+        //
         private void OnTeleportClicked()
         {
             CurrentTeleportObject.EnableTeleport();

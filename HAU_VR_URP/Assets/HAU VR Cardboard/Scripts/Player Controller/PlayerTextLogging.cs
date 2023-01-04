@@ -1,5 +1,4 @@
-﻿using System;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 
@@ -10,23 +9,10 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Variables
 
         //
-        [FoldoutGroup("Variables")] 
-        [SerializeField, TextArea] private string textLogging;
-        [FoldoutGroup("Variables")] 
-        [SerializeField] private TextMeshPro textMesh;
-        
-
-        //
-        public string TextLogging
-        {
-            get => textLogging;
-            set => textLogging = value;
-        }
-        public TextMeshPro TextMesh
-        {
-            get => textMesh;
-            set => textMesh = value;
-        }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField, TextArea] public string TextLogging {get; set; }
+        [field: FoldoutGroup("Variables")] 
+        [field: SerializeField] public TextMeshPro TextMesh {get; set; }
 
         #endregion
 
@@ -36,13 +22,19 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         private void OnValidate()
         {
             if (TextMesh == null) TextMesh = transform.Find("TextMesh").GetComponent<TextMeshPro>();
-            TextMesh.text = textLogging;
+            TextMesh.text = TextLogging;
         }
         
         //
+        private void Start()
+        {
+            if (TextMesh == null) TextMesh = transform.Find("TextMesh").GetComponent<TextMeshPro>();
+        }
+
+        //
         public void SetTextLogging(string text)
         {
-            textLogging = text;
+            TextLogging = text;
             TextMesh.text = text;
         }
         

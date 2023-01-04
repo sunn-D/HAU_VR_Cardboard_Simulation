@@ -11,26 +11,12 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
         #region Variables
 
         //
-        private Camera _mainCamera;
         private Coroutine _startXR;
         
         //
-        public static bool IsScreenTouched
-        {
-            get
-            {
-                return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
-            }
-        }
-
-        //
-        public static bool IsVRModeEnabled
-        {
-            get
-            {
-                return XRGeneralSettings.Instance.Manager.isInitializationComplete;
-            }
-        }
+        public static bool IsScreenTouched => Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+        public static bool IsVRModeEnabled => XRGeneralSettings.Instance.Manager.isInitializationComplete;
+        public static Camera MainCamera => Camera.main;
 
         #endregion
         
@@ -38,7 +24,6 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
         protected override void LoadInAwake()
         {
             DefaultVariables();
-            _mainCamera = Camera.main;
         }
 
         //
@@ -46,15 +31,11 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
         {
             if (IsVRModeEnabled)
             {
-                //
                 if (Api.IsCloseButtonPressed) ExitVRMode();
-
-                //
                 Api.UpdateScreenParams();
             }
             else
             {
-                //
                 if (IsScreenTouched) EnterVRMode();
             }
         }
@@ -97,7 +78,7 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
             XRGeneralSettings.Instance.Manager.DeinitializeLoader();
             
             //
-            _mainCamera.ResetAspect();
+            MainCamera.ResetAspect();
         }
         
         //

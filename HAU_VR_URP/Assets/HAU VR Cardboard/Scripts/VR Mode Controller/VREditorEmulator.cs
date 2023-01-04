@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+﻿using Sun_Package;
+using UnityEngine;
 
 namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
 {
-    public class VREditorEmulator : MonoBehaviour
+    public class VREditorEmulator : SunMonoSingleton<VREditorEmulator>
     {
-#if UNITY_EDITOR
         #region Variables
 
         //
@@ -23,13 +23,34 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
         private float _mouseZ;
 
         //
-        public Vector3 HeadPosition { get; private set; }
-        public Quaternion HeadRotation { get; private set; }
+        public Vector3 HeadPosition { get; set; }
+        public Quaternion HeadRotation { get; set; }
 
         #endregion
 
         #region Functions
 
+        //
+        protected override void LoadInAwake()
+        {
+            if (!Application.isEditor)
+            {
+                DestroyImmediate(gameObject);
+            }
+        }
+        
+        //
+        protected override void LoadInStart()
+        {
+            UpdateAllCameras();
+        }
+
+        //
+        private void Update()
+        {
+            UpdateEditorEmulation();
+        }
+        
         //
         public void Recenter()
         {
@@ -81,24 +102,6 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
             {
                 Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
             }
-        }
-        
-        //
-        private void Awake()
-        {
-            DontDestroyOnLoad(this);
-        }
-
-        //
-        private void Start()
-        {
-            UpdateAllCameras();
-        }
-
-        //
-        private void Update()
-        {
-            UpdateEditorEmulation();
         }
         
         // Input
@@ -169,7 +172,6 @@ namespace HAU_VR_Cardboard.Scripts.VR_Mode_Controller
             Camera.GetAllCameras(_allCameras);
         }
         
-        #endregion
-#endif
+        #endregion   
     }
 }
