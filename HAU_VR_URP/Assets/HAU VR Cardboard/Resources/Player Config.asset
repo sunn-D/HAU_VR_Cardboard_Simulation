@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013cb6cfb035492c8fb8200c20ced0cb, type: 3}
   m_Name: Player Config
   m_EditorClassIdentifier: 
-  <UsingTextLogging>k__BackingField: 1
-  <UsingDebugWindow>k__BackingField: 1
+  <UsingTextLogging>k__BackingField: 0
+  <UsingDebugWindow>k__BackingField: 0
   <MaxDistanceRay>k__BackingField: 100
   <MaxGazerTime>k__BackingField: 1
   <LayerMaskRay>k__BackingField:
