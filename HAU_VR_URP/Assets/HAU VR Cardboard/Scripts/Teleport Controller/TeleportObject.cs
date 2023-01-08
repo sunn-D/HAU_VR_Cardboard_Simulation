@@ -60,7 +60,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         {
             //
             _tweenRenderTeleport = DOTween.Sequence();
-            _tweenRenderTeleport.Append(TeleTransform.DOMoveY(0f, .75f).SetEase(Ease.Linear));
+            _tweenRenderTeleport.Append(TeleTransform.DOLocalMoveY(0f, .75f).SetEase(Ease.Linear));
             _tweenRenderTeleport.AppendInterval(.5f);
             _tweenRenderTeleport.SetLoops(-1, LoopType.Yoyo);
             _tweenRenderTeleport.Play();

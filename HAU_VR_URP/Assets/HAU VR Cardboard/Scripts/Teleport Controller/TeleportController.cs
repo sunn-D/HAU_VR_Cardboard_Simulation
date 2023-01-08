@@ -62,7 +62,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             SunEventManager.StartListening(EventID.Teleport_OnTeleportClicked, OnTeleportClicked);
             
             //
-            TeleportToFirstTeleportPoint();
+            // TeleportToFirstTeleportPoint();
         }
 
         //
