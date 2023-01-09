@@ -129,10 +129,8 @@
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AppPrefManager.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerConfigValue.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/AudioConfigValue.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Extensions/BillBoardObject.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerTextLogging.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerPointerController.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerOutsidePointer.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/PlayerConfigValue.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/BaseButtonController.cs" />
@@ -145,8 +143,10 @@
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Mode Controller/VRStartup.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UIFirstLoading.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportObject.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerPointerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AudioManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2JeDfr7Bpnoenf0IVLFlUNmjdX5" />

@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using HAU_VR_Cardboard.Scripts.Manager;
 using HAU_VR_Cardboard.Scripts.Player_Controller;
 using Sirenix.OdinInspector;
 using Sun_Package;
@@ -110,6 +111,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         //
         public void OnPointerClick()
         {
+            AudioManager.Instance.PlaySound("Splash");
             SunEventManager.EmitEvent(EventID.Teleport_OnTeleportClicked, sender: TeleportID);
             SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: TelePoint);
             _isDisable = true;

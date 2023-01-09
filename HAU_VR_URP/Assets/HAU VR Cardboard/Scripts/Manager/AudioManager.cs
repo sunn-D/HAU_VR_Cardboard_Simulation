@@ -107,6 +107,15 @@ namespace HAU_VR_Cardboard.Scripts.Manager
             SetAudioVolume(AudioGroupType.BackgroundSound);
             SetAudioVolume(AudioGroupType.FXSound);
             SetAudioVolume(AudioGroupType.ActorSound);
+            
+            //
+            foreach (var audioControl in ListAudioControl)
+            {
+                if (audioControl.AudioConfig.PlayOnAwake)
+                {
+                    audioControl.Play();
+                }
+            }
         }
         
         //

@@ -12,4 +12,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 397c1b94697a4971a11cb809dc390198, type: 3}
   m_Name: Audio Config
   m_EditorClassIdentifier: 
-  <ListAudioConfig>k__BackingField: []
+  <ListAudioConfig>k__BackingField:
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Congtruong
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: be82356a98880f1499d13dfb450e02c9, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toa23tang
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: cb9fd69b29cdfcf4d848b12eb97a56b2, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toabosua
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 5f2e7951cfaeaf44d889daba9603eb1f, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toah
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 712c8285cd8ef624d92812a962c8bc16, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toai
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 93290039773f83c4d9589a59741f0fd8, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toamythuat
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 3d5244720fdd6f9429d4a6d712e6a156, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toau
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 33488f42ff5db53469a479b100b9cf3c, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 2
+    <ClipName>k__BackingField: Toadanang
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: ea56e1ba3fad4954d9a1b91f5b667c3f, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
+  - <AudioGroupType>k__BackingField: 0
+    <ClipName>k__BackingField: Background
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: dc4cf50edb188a4459139215271e902f, type: 3}
+    <VolumeClip>k__BackingField: 0.15
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 1
+    <PlayOnAwake>k__BackingField: 1
+  - <AudioGroupType>k__BackingField: 1
+    <ClipName>k__BackingField: Splash
+    <AudioClip>k__BackingField: {fileID: 8300000, guid: 7baa4c2e4b35e36428430eaa7548af14, type: 3}
+    <VolumeClip>k__BackingField: 1
+    <PitchClip>k__BackingField: 1
+    <Looping>k__BackingField: 0
+    <PlayOnAwake>k__BackingField: 0
