@@ -80,8 +80,6 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                 }
                 else
                 {
-                    if (_raycastHit.transform.CompareTag("Block Raycast")) return;
-
                     if (!_gazerStatus)
                     {
                         _gazerStatus = true;
@@ -121,17 +119,18 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
             }
             else
             {
-                //
-                if (_gazerStatus)
-                {
-                    ResetGazer();
-                }
-                
                 // Message pointer exit
                 if (_gazeAtObject != null)
                 {
                     _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerExit();
                     TextLogging.SetActiveTextMesh(false);
+                    _gazeAtObject = null;
+                }
+                
+                //
+                if (_gazerStatus)
+                {
+                    ResetGazer();
                 }
             }
         }

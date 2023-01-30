@@ -17,6 +17,10 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         [field: FoldoutGroup("Variables")]
         [field: SerializeField] public bool IsFirstTeleport { get; set; }
         [field: FoldoutGroup("Variables")]
+        [field: SerializeField] public bool UsingAudio { get; set; }
+        [field: FoldoutGroup("Variables")]
+        [field: SerializeField, ShowIf(nameof(UsingAudio))] public string AudioClipName { get; set; }
+        [field: FoldoutGroup("Variables")]
         [field: SerializeField] public Vector3 TelePoint { get; set; }
         [field: FoldoutGroup("Variables")]
         [field: SerializeField] public BoxCollider TeleCollider { get; set; }
@@ -112,6 +116,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         public void OnPointerClick()
         {
             AudioManager.Instance.PlaySound("Splash");
+            if (UsingAudio) AudioManager.Instance.PlayActorSound(AudioClipName);
             SunEventManager.EmitEvent(EventID.Teleport_OnTeleportClicked, sender: TeleportID);
             SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: TelePoint);
             _isDisable = true;

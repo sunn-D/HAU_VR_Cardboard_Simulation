@@ -6,10 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/HAU VR Cardboard/Scenes/Loading Scene.unity
-    guid: ddcc470e8cf1937428586e6abe042c7f
-  - enabled: 1
-    path: Assets/HAU VR Cardboard/Scenes/Main Scene.unity
+    path: Assets/HAU VR Cardboard/Scenes/Main Scene Test.unity
     guid: 228c467c2cfbe4c408c2932fe17c015c
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 91ce11e26e066c145aa233da5804e7d1, type: 2}

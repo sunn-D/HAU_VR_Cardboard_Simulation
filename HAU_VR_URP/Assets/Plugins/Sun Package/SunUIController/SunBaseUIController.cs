@@ -21,6 +21,10 @@ namespace Sun_Package
         [SerializeField] private LoadIn loadInAction;
         [FoldoutGroup("Variables")] 
         [SerializeField] private bool logging;
+        [FoldoutGroup("Variables")] 
+        [SerializeField] private GameObject startCanvas;
+        [FoldoutGroup("Variables")] 
+        [SerializeField] private GameObject outCanvas;
         
         //
         public List<SunBaseUI> UIScreens => uiScreens;
@@ -58,6 +62,9 @@ namespace Sun_Package
             {
                 if (logging) Debug.LogWarning("No reference to starting screen. Check missing in UI Controller.");
             }
+            
+            startCanvas.SetActive(true);
+            outCanvas.SetActive(false);
         }
         
         //
@@ -164,6 +171,13 @@ namespace Sun_Package
             }
             PopScreen();
             if (Instance.logging) Debug.Log($"Pop all screen success.");
+        }
+        
+        //
+        public static void ShowOutCanvas()
+        {
+            Instance.startCanvas.SetActive(false);
+            Instance.outCanvas.SetActive(true);
         }
 
         #endregion

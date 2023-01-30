@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using HAU_VR_Cardboard.Scripts.Manager;
 using HAU_VR_Cardboard.Scripts.Player_Controller;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -39,12 +40,13 @@ namespace HAU_VR_Cardboard.Scripts.UI_Controller
         {
             _tweenColorButton?.Kill();
             _tweenColorButton = ImageButton.DOColor(PointEnterColor, .25f);
+            Debug.Log("Enter");
         }
 
         //
         public virtual void OnPointerClick()
         {
-            
+            AudioManager.Instance.PlaySound("Splash");
         }
         
         //
@@ -52,6 +54,7 @@ namespace HAU_VR_Cardboard.Scripts.UI_Controller
         {
             _tweenColorButton?.Kill();
             _tweenColorButton = ImageButton.DOColor(NormalColor, .25f);
+            Debug.Log("Exit");
         }
 
         #endregion

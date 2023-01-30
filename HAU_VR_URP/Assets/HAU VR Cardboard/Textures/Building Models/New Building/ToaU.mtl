@@ -1,0 +1,39 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _auto_17
+Ka 0.000000 0.000000 0.000000
+Kd 0.164706 0.470588 0.698039
+Ks 0.330000 0.330000 0.330000
+map_Kd ToaU/_auto_17.jpg
+
+newmtl Color_M09
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Dirty_Wall
+Ka 0.000000 0.000000 0.000000
+Kd 0.945098 0.964706 0.941176
+Ks 0.330000 0.330000 0.330000
+map_Kd ToaU/Dirty_Wall.jpg
+
+newmtl t_i_xu_ng__2_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.968627 0.921569 0.780392
+Ks 0.330000 0.330000 0.330000
+map_Kd ToaU/t_i_xu_ng__2_1.jpg
+
+newmtl Color_I03
+Ka 0.000000 0.000000 0.000000
+Kd 0.396078 0.396078 1.000000
+Ks 0.330000 0.330000 0.330000
+d 0.980000
+
+newmtl Roofing_Scalloped_Ornate
+Ka 0.000000 0.000000 0.000000
+Kd 0.858824 0.364706 0.196078
+Ks 0.330000 0.330000 0.330000
+map_Kd ToaU/Roofing_Scalloped_Ornate.jpg
+

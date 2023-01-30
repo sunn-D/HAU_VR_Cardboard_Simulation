@@ -18,5 +18,5 @@ MonoBehaviour:
   <MaxGazerTime>k__BackingField: 1
   <LayerMaskRay>k__BackingField:
     serializedVersion: 2
-    m_Bits: 27648
+    m_Bits: 11776
   <DelayGazeTime>k__BackingField: 0.5

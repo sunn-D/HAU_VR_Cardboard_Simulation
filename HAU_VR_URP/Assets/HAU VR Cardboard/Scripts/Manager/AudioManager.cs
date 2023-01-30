@@ -144,6 +144,26 @@ namespace HAU_VR_Cardboard.Scripts.Manager
         }
         
         //
+        public void PlayActorSound(string nameClip)
+        {
+            foreach (var audioControl in ListAudioControl)
+            {
+                if (audioControl.AudioConfig.AudioGroupType == AudioGroupType.ActorSound)
+                {
+                    if (audioControl.AudioConfig.ClipName == nameClip)
+                    {
+                        audioControl.Play();
+                    }
+                    else
+                    {
+                        audioControl.Stop();
+                    }
+                }
+                
+            }
+        }
+        
+        //
         public void PlaySound(string nameClip)
         {
             foreach (var audioControl in ListAudioControl)
