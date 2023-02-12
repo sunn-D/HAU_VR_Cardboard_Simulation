@@ -11,14 +11,10 @@ namespace HAU_VR_Cardboard.Scripts.Extensions
         public enum BillboardTypeEnum { LookAtCamera, CameraForward };
         
         //
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public BillboardTypeEnum BillboardType { get; set; }
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public bool LockX { get; set; }
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public bool LockY { get; set; }
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public bool LockZ { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public BillboardTypeEnum BillboardType { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool LockX { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool LockY { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool LockZ { get; set; }
 
         //
         private Vector3 _originalRotation;
@@ -38,6 +34,8 @@ namespace HAU_VR_Cardboard.Scripts.Extensions
         //
         private void LateUpdate()
         {
+            if (_cameraMain == null) return;
+
             //
             switch (BillboardType) {
                 case BillboardTypeEnum.LookAtCamera:

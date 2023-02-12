@@ -8,10 +8,8 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Variables
 
         //
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField, Range(0, 360)] public int FillAmount { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public SpriteRenderer TargetRenderer { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField, Range(0, 360)] public int FillAmount { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public SpriteRenderer TargetRenderer { get; set; }
 
         //
         private Material _targetMaterial;

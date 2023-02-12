@@ -27,10 +27,6 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         private void Start()
         {
             //
-            if (!PlayerConfigValue.Instance.UsingTextLogging) PointerController.TextLogging.gameObject.SetActive(false);
-            if (!PlayerConfigValue.Instance.UsingDebugWindow) PointerController.DebugWindow.SetActive(false);
-            
-            //
             PointerController.Initialize();
             
             //

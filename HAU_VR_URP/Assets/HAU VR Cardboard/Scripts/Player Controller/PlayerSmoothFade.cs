@@ -10,20 +10,13 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Variables
 
         //
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField, Range(0f, 1f)] public float Alpha { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public SpriteRenderer RendererFade { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public float FadeDuration { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public bool FadeOnStart { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public bool ColorOnStart { get; set; }
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public bool EnableBeforePlay { get; set; }
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public bool DisableAfterPlay { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField, Range(0f, 1f)] public float Alpha { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public SpriteRenderer RendererFade { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public float FadeDuration { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool FadeOnStart { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool ColorOnStart { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool EnableBeforePlay { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool DisableAfterPlay { get; set; }
         
         //
         public Action OnStartAction { get; set; }

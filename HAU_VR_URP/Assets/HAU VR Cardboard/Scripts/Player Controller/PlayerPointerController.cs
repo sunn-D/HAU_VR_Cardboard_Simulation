@@ -9,14 +9,8 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Variables
         
         //
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public PlayerOutsidePointer OutPointer { get; set; }
-        [field: FoldoutGroup("Variables")]
-        [field: SerializeField] public PlayerSmoothFade SmoothFade { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public PlayerTextLogging TextLogging { get; set; }
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public GameObject DebugWindow { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public PlayerOutsidePointer OutPointer { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public PlayerSmoothFade SmoothFade { get; set; }
 
         //
         private RaycastHit _raycastHit;
@@ -35,8 +29,6 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         {
             if (OutPointer == null) OutPointer = GetComponentInChildren<PlayerOutsidePointer>();
             if (SmoothFade == null) SmoothFade = GetComponentInChildren<PlayerSmoothFade>();
-            if (TextLogging == null) TextLogging = GetComponentInChildren<PlayerTextLogging>();
-            if (DebugWindow == null) DebugWindow = transform.Find("VR Debug Window").gameObject;
         }
 
         //
@@ -56,7 +48,6 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         private void ResetGazer()
         {
             OutPointer.SetActiveRenderer(false);
-            TextLogging.SetActiveTextMesh(false);
             _currentGazerTimer = PlayerConfigValue.Instance.MaxGazerTime;
             _gazerStatus = false;
         }
@@ -87,13 +78,10 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                         _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerEnter();
                         OutPointer.SetFillAmount(0f);
                         OutPointer.SetActiveRenderer(true);
-                        TextLogging.SetTextLogging("");
-                        TextLogging.SetActiveTextMesh(true);
                     }
                     
                     //
                     _currentGazerTimer -= Time.deltaTime;
-                    TextLogging.SetTextLogging(_gazeAtObject.name + " " + _currentGazerTimer.ToString("0.00"));
                     var percent = (PlayerConfigValue.Instance.MaxGazerTime - _currentGazerTimer) / PlayerConfigValue.Instance.MaxGazerTime;
                     OutPointer.SetFillAmount(percent);
                     
@@ -102,8 +90,6 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                     {
                         // Message pointer exit
                         if (_gazeAtObject != null) _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerExit();
-                        
-                        TextLogging.SetActiveTextMesh(false);
             
                         // Refer gazer object
                         _gazeAtObject = _raycastHit.transform.gameObject;
@@ -123,7 +109,6 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
                 if (_gazeAtObject != null)
                 {
                     _gazeAtObject.GetComponent<IPointerAction>()?.OnPointerExit();
-                    TextLogging.SetActiveTextMesh(false);
                     _gazeAtObject = null;
                 }
                 
