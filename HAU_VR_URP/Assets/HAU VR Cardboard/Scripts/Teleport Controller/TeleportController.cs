@@ -12,12 +12,12 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
 
         //
         [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public List<TeleportObject> ListTeleObjects { get; set; }
+        [field: SerializeField] public List<Teleport> ListTeleObjects { get; set; }
         
         //
         public int StartTeleportID { get; set; }
         public int CurrentTeleportID { get; set; }
-        public TeleportObject CurrentTeleportObject { get; set; }
+        public Teleport CurrentTeleportObject { get; set; }
 
         #endregion
 
@@ -27,7 +27,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         [Button(ButtonSizes.Large)] 
         public void GetAllTeleportObject()
         {
-            var allTeleportObject = GameObject.FindObjectsOfType<TeleportObject>().ToList();
+            var allTeleportObject = GameObject.FindObjectsOfType<Teleport>().ToList();
             allTeleportObject.Sort((t1, t2) =>
             {
                 if (t1.TeleportID < t2.TeleportID) return -1;
@@ -44,13 +44,13 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             {
                 foreach (var teleportObject in ListTeleObjects)
                 {
-                    teleportObject.Initialize();
-                    if (teleportObject.IsFirstTeleport)
-                    {
-                        StartTeleportID = teleportObject.TeleportID;
-                        CurrentTeleportID = teleportObject.TeleportID;
-                        CurrentTeleportObject = teleportObject;
-                    }
+                    // teleportObject.Initialize();
+                    // if (teleportObject.IsFirstTeleport)
+                    // {
+                    //     StartTeleportID = teleportObject.TeleportID;
+                    //     CurrentTeleportID = teleportObject.TeleportID;
+                    //     CurrentTeleportObject = teleportObject;
+                    // }
                 }
             }
             else
@@ -71,7 +71,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             foreach (var teleportObject in ListTeleObjects)
             {
                 teleportObject.gameObject.SetActive(true);
-                teleportObject.EnableTeleport();
+                // teleportObject.EnableTeleport();
             }
         }
         
@@ -80,7 +80,7 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         {
             foreach (var teleportObject in ListTeleObjects)
             {
-                teleportObject.DisableTeleport();
+                // teleportObject.DisableTeleport();
                 teleportObject.gameObject.SetActive(false);
             }
         }
@@ -88,18 +88,18 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         //
         public void TeleportToFirstTeleportPoint()
         {
-            CurrentTeleportObject.DisableTeleport();
-            SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: CurrentTeleportObject.TelePoint);
+            // CurrentTeleportObject.DisableTeleport();
+            // SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: CurrentTeleportObject.TelePoint);
         }
         
         //
         private void OnTeleportClicked()
         {
-            CurrentTeleportObject.EnableTeleport();
-            var newTeleportID = (int) SunEventManager.GetSender(EventID.Teleport_OnTeleportClicked);
-            CurrentTeleportObject = ListTeleObjects.Find(o => o.TeleportID == newTeleportID);
-            CurrentTeleportID = newTeleportID;
-            CurrentTeleportObject.DisableTeleport();
+            // CurrentTeleportObject.EnableTeleport();
+            // var newTeleportID = (int) SunEventManager.GetSender(EventID.Teleport_OnTeleportClicked);
+            // CurrentTeleportObject = ListTeleObjects.Find(o => o.TeleportID == newTeleportID);
+            // CurrentTeleportID = newTeleportID;
+            // CurrentTeleportObject.DisableTeleport();
         }
 
         #endregion

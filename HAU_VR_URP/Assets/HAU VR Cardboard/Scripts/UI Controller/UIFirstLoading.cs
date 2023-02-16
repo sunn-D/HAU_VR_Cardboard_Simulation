@@ -44,7 +44,7 @@ namespace HAU_VR_Cardboard.Scripts.UI_Controller
             //
             SmoothFade.OnFinishAction += () =>
             {
-                AppPrefManager.Instance.StartCoroutine(UnloadLoadingScene(LoadingConfigValue.Instance.DelayAfterFadedIn));
+                SettingManager.Instance.StartCoroutine(UnloadLoadingScene(LoadingConfigValue.Instance.DelayAfterFadedIn));
             };
             
             //

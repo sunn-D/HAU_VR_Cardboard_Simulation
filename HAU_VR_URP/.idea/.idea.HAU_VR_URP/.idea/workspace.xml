@@ -101,8 +101,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/FadeGroup/FadeSpriteRenderer.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunExtensions/SunEncryptString.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunExtensions/SunExtensions.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunSingleton/SunMonoSingleton.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunTweenUI/SunTween.cs" />
@@ -117,11 +115,7 @@
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/LoadingConfigValue.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunUIController/SunBaseUI.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Mode Controller/VREditorEmulator.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunEventManager/SunEventManager.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Mode Controller/VRStartup.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UIFirstLoading.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AudioManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportController.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportObject.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/HomeUI.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UI/HomeUI.cs" />
@@ -149,9 +143,15 @@
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerSmoothFade.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/PlayerConfigValue.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/Teleport.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCGraduate.cs" />
+      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunEventManager/SunEventManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCVoice.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCMoving.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UIFirstLoading.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/Teleport.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2JeDfr7Bpnoenf0IVLFlUNmjdX5" />

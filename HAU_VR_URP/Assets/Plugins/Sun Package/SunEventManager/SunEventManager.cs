@@ -10,9 +10,6 @@ namespace Sun_Package
     //ID của event cần sử dụng
     public static class EventID
     {
-        // Event GamePref
-        // public const string GamePref_OnFirstPlay = "GamePref_OnFirstPlay";
-        
         // Event Teleport
         public const string Teleport_OnTeleportClicked = "Teleport_OnTeleportClicked";
         public const string Teleport_OnTeleportPlayer = "Teleport_OnTeleportPlayer";

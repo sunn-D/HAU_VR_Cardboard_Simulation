@@ -188,6 +188,20 @@ namespace HAU_VR_Cardboard.Scripts.Manager
                 }
             }
         }
+        
+        //
+        public float DurationSound(string nameClip)
+        {
+            foreach (var audioControl in ListAudioControl)
+            {
+                if (audioControl.AudioConfig.ClipName == nameClip)
+                {
+                    return audioControl.AudioSource.clip.length;
+                }
+            }
+
+            return -1f;
+        }
 
         #endregion
     }

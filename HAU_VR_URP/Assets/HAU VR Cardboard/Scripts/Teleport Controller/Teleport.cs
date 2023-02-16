@@ -3,6 +3,7 @@ using DG.Tweening;
 using HAU_VR_Cardboard.Scripts.Manager;
 using HAU_VR_Cardboard.Scripts.Player_Controller;
 using Sirenix.OdinInspector;
+using Sun_Package;
 using UnityEngine;
 
 namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
@@ -35,8 +36,10 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             TeleportMesh = transform.Find("Particle Mesh").GetComponent<ParticleSystem>();
             TeleportGround = transform.Find("Particle Ground").GetComponent<ParticleSystem>();
             TeleportEffect = transform.Find("Particle Effect").GetComponent<ParticleSystem>();
+            TeleportPosition = new Vector3(transform.position.x, 0f, transform.position.z);
+            TeleportID = gameObject.name.Split(' ')[2].TryParseInt();
         }
-        
+
         public void OnPointerExit()
         {
             Debug.Log($"Teleport {TeleportID} pointer exit.");
