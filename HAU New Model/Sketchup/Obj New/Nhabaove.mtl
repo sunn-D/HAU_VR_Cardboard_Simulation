@@ -1,0 +1,21 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Color_I03
+Ka 0.000000 0.000000 0.000000
+Kd 0.396078 0.396078 1.000000
+Ks 0.330000 0.330000 0.330000
+d 0.980000
+
+newmtl Dirty_Wall
+Ka 0.000000 0.000000 0.000000
+Kd 0.945098 0.964706 0.941176
+Ks 0.330000 0.330000 0.330000
+map_Kd Nhabaove/Dirty_Wall.jpg
+
+newmtl Color_M09
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+

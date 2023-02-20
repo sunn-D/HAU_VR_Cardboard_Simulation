@@ -1,0 +1,44 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl _Color_H01_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.392157 0.584314 0.929412
+Ks 0.330000 0.330000 0.330000
+d 0.950000
+
+newmtl Color_M09
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl logo_truong_dai_hoc_kien_truc_ha_noi_inkythuatso_01_23_10_48_40
+Ka 0.000000 0.000000 0.000000
+Kd 0.164706 0.466667 0.694118
+Ks 0.330000 0.330000 0.330000
+map_Kd Tòa U/logo_truong_dai_hoc_kien_truc_ha_noi_inkythuatso_01_23_10_48_40.jpg
+
+newmtl t_i_xu_ng__2_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.968627 0.921569 0.780392
+Ks 0.330000 0.330000 0.330000
+map_Kd Tòa U/t_i_xu_ng__2_1.jpg
+
+newmtl Roofing_Scalloped_Ornate
+Ka 0.000000 0.000000 0.000000
+Kd 0.858824 0.364706 0.196078
+Ks 0.330000 0.330000 0.330000
+map_Kd Tòa U/Roofing_Scalloped_Ornate.jpg
+
+newmtl inax_355_eac_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.709804 0.654902 0.533333
+Ks 0.330000 0.330000 0.330000
+map_Kd Tòa U/inax_355_eac_2.jpg
+

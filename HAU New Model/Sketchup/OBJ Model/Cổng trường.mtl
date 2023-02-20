@@ -1,0 +1,38 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Color_I04
+Ka 0.000000 0.000000 0.000000
+Kd 0.196078 0.196078 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl inax_355_eac_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.709804 0.654902 0.533333
+Ks 0.330000 0.330000 0.330000
+map_Kd Cổng trường/inax_355_eac_2.jpg
+
+newmtl logo_truong_dai_hoc_kien_truc_ha_noi_inkythuatso_01_23_10_48_40
+Ka 0.000000 0.000000 0.000000
+Kd 0.164706 0.466667 0.694118
+Ks 0.330000 0.330000 0.330000
+map_Kd Cổng trường/logo_truong_dai_hoc_kien_truc_ha_noi_inkythuatso_01_23_10_48_40.jpg
+
+newmtl t_i_xu_ng
+Ka 0.000000 0.000000 0.000000
+Kd 0.615686 0.482353 0.376471
+Ks 0.330000 0.330000 0.330000
+map_Kd Cổng trường/t_i_xu_ng.jpg
+
+newmtl INAX_HAL_20BN_HB_6_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.317647 0.313725 0.301961
+Ks 0.330000 0.330000 0.330000
+map_Kd Cổng trường/INAX_HAL_20BN_HB_6_1.png
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+

@@ -9,7 +9,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pre UI
   - Water
   - UI
   - Ground
@@ -20,7 +20,7 @@ TagManager:
   - People
   - Player
   - Building
-  - 
+  - BlockRaycast
   - 
   - 
   - 

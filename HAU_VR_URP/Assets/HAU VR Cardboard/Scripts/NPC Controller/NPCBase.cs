@@ -21,8 +21,8 @@ namespace HAU_VR_Cardboard.Scripts.NPC_Controller
 
         //
         [field: FoldoutGroup("Style"), SerializeField] public NPCStyle Style { get; set; }
-        [field: FoldoutGroup("Variables"), SerializeField] public Animator NPCAnimator { get; set; }
-        [field: FoldoutGroup("Variables"), SerializeField] public BoxCollider NPCCollider { get; set; }
+        [field: FoldoutGroup("Component"), SerializeField] public Animator NPCAnimator { get; set; }
+        [field: FoldoutGroup("Component"), SerializeField] public BoxCollider NPCCollider { get; set; }
         
         
         //

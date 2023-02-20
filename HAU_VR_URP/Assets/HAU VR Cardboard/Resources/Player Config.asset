@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013cb6cfb035492c8fb8200c20ced0cb, type: 3}
   m_Name: Player Config
   m_EditorClassIdentifier: 
-  <MaxDistanceRay>k__BackingField: 100
+  <MaxDistanceRay>k__BackingField: 20
   <MaxGazerTime>k__BackingField: 1
   <LayerMaskRay>k__BackingField:
     serializedVersion: 2
-    m_Bits: 11776
-  <DelayGazeTime>k__BackingField: 0.5
+    m_Bits: 3584
+  <LayerMaskBlockRay>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 16384
+  <DelayGazeTime>k__BackingField: 1

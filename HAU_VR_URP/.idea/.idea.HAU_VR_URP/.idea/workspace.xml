@@ -96,31 +96,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@10.10.0/Runtime/Data/UniversalRenderPipelineAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.legacyinputhelpers@2.1.9/Runtime/CameraOffset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.google.xr.cardboard@3849789abd/Runtime/Api.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunExtensions/SunExtensions.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunSingleton/SunMonoSingleton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunTweenUI/SunTween.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/OutsidePointerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AppInitialize.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/IngameDebugConsole/Scripts/DebugLogManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AppPrefManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerConfigValue.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/AudioConfigValue.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerTextLogging.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/LoadingConfidValue.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/LoadingConfigValue.cs" />
-      <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunUIController/SunBaseUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Mode Controller/VREditorEmulator.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/VR Mode Controller/VRStartup.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/HomeUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UI/HomeUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UI/QuitUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UI/SettingUI.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UI/MapUI.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UI/CreditUI.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UIController.cs" />
@@ -130,28 +111,48 @@
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonMap.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonQuit.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonSetting.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonPlay.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/BaseButtonController.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonBackgroundSound.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonFXSound.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonActorSound.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Outlines/Scripts/RendererFeatures/ScreenSpaceOutlines.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Extensions/BillBoardObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/SettingManager.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerOutsidePointer.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerPointerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerSmoothFade.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Scriptables/PlayerConfigValue.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCGraduate.cs" />
       <option value="$PROJECT_DIR$/Assets/Plugins/Sun Package/SunEventManager/SunEventManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AudioManager.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCVoice.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCBase.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCMoving.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonActorSound.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonBackgroundSound.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonFXSound.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/CoroutineController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/GameInitialize.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/SceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/UIFirstLoading.cs" />
-      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/Teleport.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/NPCBase.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/HomeUI/HomeUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/MapUI/MapUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/LoadingUI/UIFirstLoading.cs" />
+      <option value="$PROJECT_DIR$/Assets/External/Sun Package/SunEventManager/SunEventID.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerConfigValue.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Player Controller/PlayerPointerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/BaseButtonController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/BuildingController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/ButtonPlay.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/NPC Controller/CarMoving.cs" />
       <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/TeleportController.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/HomeUI/ButtonPlay.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/HomeUI/ButtonMap.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/SettingUI/ButtonActorSound.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/SettingUI/ButtonBackgroundSound.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/SettingUI/ButtonFXSound.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/AudioManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Manager/SettingManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/SettingUI/ButtonQuality.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/UI Controller/SettingUI/SettingUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/HAU VR Cardboard/Scripts/Teleport Controller/Teleport.cs" />
+      <option value="$PROJECT_DIR$/Assets/External/NiceVibrations/Common/Scripts/Haptics/MMNVAHAP.cs" />
+      <option value="$PROJECT_DIR$/Assets/External/Sun Package/SunUIController/SunBaseUIController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2JeDfr7Bpnoenf0IVLFlUNmjdX5" />

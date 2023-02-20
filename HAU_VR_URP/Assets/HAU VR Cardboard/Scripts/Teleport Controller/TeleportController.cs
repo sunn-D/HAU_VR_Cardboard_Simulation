@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using HAU_VR_Cardboard.Scripts.Manager;
 using Sirenix.OdinInspector;
 using Sun_Package;
 using UnityEngine;
@@ -11,13 +12,12 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         #region Variables
 
         //
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] public List<Teleport> ListTeleObjects { get; set; }
+        [field: FoldoutGroup("Teleport"), SerializeField] public int StartTeleportID { get; set; }
+        [field: FoldoutGroup("Teleport"), SerializeField] public List<Teleport> ListTeleports { get; set; }
         
         //
-        public int StartTeleportID { get; set; }
         public int CurrentTeleportID { get; set; }
-        public Teleport CurrentTeleportObject { get; set; }
+        public Teleport CurrentTeleport { get; set; }
 
         #endregion
 
@@ -34,72 +34,64 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
                 if (t1.TeleportID > t2.TeleportID) return 1;
                 return 0;
             });
-            ListTeleObjects = allTeleportObject;
+            ListTeleports = allTeleportObject;
         }
 
         //
         protected override void LoadInStart()
         {
-            if (ListTeleObjects != null)
-            {
-                foreach (var teleportObject in ListTeleObjects)
-                {
-                    // teleportObject.Initialize();
-                    // if (teleportObject.IsFirstTeleport)
-                    // {
-                    //     StartTeleportID = teleportObject.TeleportID;
-                    //     CurrentTeleportID = teleportObject.TeleportID;
-                    //     CurrentTeleportObject = teleportObject;
-                    // }
-                }
-            }
-            else
-            {
-                Debug.LogWarning("No teleport object in this scene.");
-                return;
-            }
-            
-            SunEventManager.StartListening(EventID.Teleport_OnTeleportClicked, OnTeleportClicked);
-            
-            //
+            SunEventManager.StartListening(SunEventID.Teleport_TeleportClicked, OnTeleportClicked);
             DisableAllTeleport();
         }
 
         //
         public void EnableAllTeleport()
         {
-            foreach (var teleportObject in ListTeleObjects)
+            foreach (var teleport in ListTeleports)
             {
-                teleportObject.gameObject.SetActive(true);
-                // teleportObject.EnableTeleport();
+                teleport.gameObject.SetActive(true);
+                teleport.EnableTeleport();
             }
         }
         
         //
         public void DisableAllTeleport()
         {
-            foreach (var teleportObject in ListTeleObjects)
+            foreach (var teleport in ListTeleports)
             {
-                // teleportObject.DisableTeleport();
-                teleportObject.gameObject.SetActive(false);
+                teleport.DisableTeleport();
+                teleport.gameObject.SetActive(false);
             }
         }
 
         //
         public void TeleportToFirstTeleportPoint()
         {
-            // CurrentTeleportObject.DisableTeleport();
-            // SunEventManager.EmitEvent(EventID.Teleport_OnTeleportPlayer, sender: CurrentTeleportObject.TelePoint);
+            var firstTeleport = ListTeleports.Find(o => o.TeleportID == StartTeleportID);
+            firstTeleport.DisableTeleport();
+            CurrentTeleport = firstTeleport;
+            CurrentTeleportID = StartTeleportID;
+            SunEventManager.EmitEvent(SunEventID.Teleport_TeleportPlayer, sender: firstTeleport.TeleportPosition);
         }
         
         //
-        private void OnTeleportClicked()
+        private void OnTeleportClicked(object sender)
         {
-            // CurrentTeleportObject.EnableTeleport();
-            // var newTeleportID = (int) SunEventManager.GetSender(EventID.Teleport_OnTeleportClicked);
-            // CurrentTeleportObject = ListTeleObjects.Find(o => o.TeleportID == newTeleportID);
-            // CurrentTeleportID = newTeleportID;
-            // CurrentTeleportObject.DisableTeleport();
+            EnableAllTeleport();
+            var newTeleportID = (int) sender;
+            CurrentTeleport = ListTeleports.Find(o => o.TeleportID == newTeleportID);
+            CurrentTeleport.DisableTeleport();
+            if (CurrentTeleport.ChangeOutside)
+            {
+                BuildingController.Instance.ShowBuilding(CurrentTeleport.ShowBuilding);
+                EnableAllTeleport();
+            }
+            if (CurrentTeleport.TeleportToOtherPoint)
+            {
+                var disableTeleport = ListTeleports.Find(o => o.TeleportID == CurrentTeleport.TeleportToID);
+                disableTeleport.DisableTeleport();
+            }
+            CurrentTeleportID = newTeleportID;
         }
 
         #endregion

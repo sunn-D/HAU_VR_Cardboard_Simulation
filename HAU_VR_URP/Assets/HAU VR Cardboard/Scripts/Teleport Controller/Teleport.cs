@@ -1,6 +1,4 @@
-﻿using System;
-using DG.Tweening;
-using HAU_VR_Cardboard.Scripts.Manager;
+﻿using HAU_VR_Cardboard.Scripts.Manager;
 using HAU_VR_Cardboard.Scripts.Player_Controller;
 using Sirenix.OdinInspector;
 using Sun_Package;
@@ -18,15 +16,13 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
         [field: FoldoutGroup("Variables"), SerializeField] public ParticleSystem TeleportMesh { get; set; }
         [field: FoldoutGroup("Variables"), SerializeField] public ParticleSystem TeleportGround { get; set; }
         [field: FoldoutGroup("Variables"), SerializeField] public ParticleSystem TeleportEffect { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool TeleportToOtherPoint { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField, ShowIf(nameof(TeleportToOtherPoint))] public int TeleportToID { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool ChangeOutside { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField, ShowIf(nameof(ChangeOutside))] public BuildingEnum ShowBuilding { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField] public bool ChangeLight { get; set; }
+        [field: FoldoutGroup("Variables"), SerializeField, ShowIf(nameof(ChangeLight))] public Vector3 LightRotation { get; set; }
 
-        //
-        public bool IsDisable { get; set; }
-        
-        //
-        private readonly Color TransparentColor = new Color(1f, 1f, 1f, 0f);
-        private readonly Color NormalColor = new Color(1f, 1f, 1f, 1f);
-        private readonly Color PointEnterColor = new Color(.9f, .7f, .3f, 1f);
-        
         #endregion
         
         //
@@ -36,24 +32,43 @@ namespace HAU_VR_Cardboard.Scripts.Teleport_Controller
             TeleportMesh = transform.Find("Particle Mesh").GetComponent<ParticleSystem>();
             TeleportGround = transform.Find("Particle Ground").GetComponent<ParticleSystem>();
             TeleportEffect = transform.Find("Particle Effect").GetComponent<ParticleSystem>();
-            TeleportPosition = new Vector3(transform.position.x, 0f, transform.position.z);
-            TeleportID = gameObject.name.Split(' ')[2].TryParseInt();
+            TeleportPosition = new Vector3(transform.localPosition.x, 0f, transform.localPosition.z);
+            TeleportID = SunFuncString.ParseInt(gameObject.name.Split(' ')[2]);
         }
 
-        public void OnPointerExit()
+        //
+        public void EnableTeleport()
         {
-            Debug.Log($"Teleport {TeleportID} pointer exit.");
+            TeleportMesh.Play();
+            TeleportGround.Play();
+            TeleportEffect.Play();
+            TeleportCollider.enabled = true;
+        }
+        
+        //
+        public void DisableTeleport()
+        {
+            TeleportMesh.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            TeleportEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            TeleportCollider.enabled = false;
         }
 
+        //
         public void OnPointerEnter()
         {
-            Debug.Log($"Teleport {TeleportID} pointer enter.");
         }
 
+        //
         public void OnPointerClick()
         {
             AudioManager.Instance.PlaySound("Splash");
-            Debug.Log($"Teleport {TeleportID} pointer click.");
+            SunEventManager.EmitEvent(SunEventID.Teleport_TeleportClicked, sender: TeleportID);
+            SunEventManager.EmitEvent(SunEventID.Teleport_TeleportPlayer, sender: TeleportPosition);
+        }
+
+        //
+        public void OnPointerExit()
+        {
         }
     }
 }

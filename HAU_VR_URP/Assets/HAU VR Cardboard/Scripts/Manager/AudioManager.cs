@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using HAU_VR_Cardboard.Scripts.Scriptables;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using Sun_Package;
 using UnityEngine;
@@ -8,43 +8,78 @@ using UnityEngine;
 namespace HAU_VR_Cardboard.Scripts.Manager
 {
     //
-    [Serializable]
-    public class AudioControl
+    public enum AudioGroupType { BgSound, ActorSound }
+    
+    //
+    [Serializable] 
+    public class Sound
     {
         #region Variables
 
+        [field: FoldoutGroup("Base fields"), SerializeField] public AudioGroupType AudioGroup { get; private set; }
+        [field: FoldoutGroup("Base fields"), SerializeField] public string ClipName { get; private set; }
+        [field: FoldoutGroup("Base fields"), SerializeField] public AudioClip Clip { get; private set; }
+        [field: FoldoutGroup("Clip fields"), Range(0f, 1f), SerializeField] public float Volume { get; private set; } = 1f;
+        [field: FoldoutGroup("Clip fields"), Range(0f, 3f), SerializeField] public float Pitch { get; private set; } = 1f;
+        [field: FoldoutGroup("Clip fields"), SerializeField] public bool Loop { get; private set; }
+        [field: FoldoutGroup("Clip fields"), SerializeField] public bool PlayOnAwake { get; private set; }
+        
         //
-        public AudioConfig AudioConfig { get; set; }
-        public AudioSource AudioSource { get; set; }
+        public AudioSource AudioSource { get; private set; }
 
         #endregion
 
         #region Functions
 
         //
-        public void Initialize(AudioConfig config, AudioSource source)
+        public void InitializeSource(AudioSource audioSource)
         {
-            AudioConfig = config;
-            AudioSource = source;
-            AudioSource.clip = AudioConfig.AudioClip;
-            AudioSource.volume = AudioConfig.VolumeClip;
-            AudioSource.pitch = AudioConfig.PitchClip;
-            AudioSource.loop = AudioConfig.Looping;
-            AudioSource.playOnAwake = AudioConfig.PlayOnAwake;
+            AudioSource = audioSource;
+            AudioSource.clip = Clip;
+            AudioSource.pitch = Pitch;
+            AudioSource.volume = Volume;
+            AudioSource.loop = Loop;
+            AudioSource.playOnAwake = PlayOnAwake;
         }
         
         //
-        public void Play()
+        public void SetAudioClip(AudioClip clip)
         {
-            if (AudioSource.isPlaying) return;
-            AudioSource.Play();
+            AudioSource.clip = clip;
         }
         
+        //
+        public void Play(bool checkPlaying = true)
+        {
+            if (checkPlaying)
+            {
+                if (AudioSource.isPlaying) return;
+                AudioSource.Play();
+            }
+            else
+            {
+                if (AudioSource.isPlaying) AudioSource.Stop();
+                AudioSource.Play();
+            }
+        }
+
         //
         public void Stop()
         {
             if (!AudioSource.isPlaying) return;
             AudioSource.Stop();
+        }
+        
+        //
+        public void SetVolume(bool volumeValue)
+        {
+            AudioSource.volume = volumeValue ? Volume : 0f;
+        }
+        
+        //
+        public void SetVolume(float volumeValue)
+        {
+            AudioSource.volume = volumeValue <= Volume ? volumeValue : Volume;
         }
 
         #endregion
@@ -54,26 +89,16 @@ namespace HAU_VR_Cardboard.Scripts.Manager
     public class AudioManager : SunMonoSingleton<AudioManager>
     {
         #region Variables
-
-        [field: FoldoutGroup("Variables")] 
-        [field: SerializeField] private List<AudioControl> ListAudioControl { get; set; }
         
         //
-        public static bool BackgroundSoundValue
-        {
-            get => PlayerPrefs.GetInt("Audio_backgroundsoundvalue") == 1;
-            set => PlayerPrefs.SetInt("Audio_backgroundsoundvalue", value ? 1 : 0);
-        }
-        public static bool FXSoundValue
-        {
-            get => PlayerPrefs.GetInt("Audio_fxsoundvalue") == 1;
-            set => PlayerPrefs.SetInt("Audio_fxsoundvalue", value ? 1 : 0);
-        }
-        public static bool ActorSoundValue
-        {
-            get => PlayerPrefs.GetInt("Audio_actorsoundvalue") == 1;
-            set => PlayerPrefs.SetInt("Audio_actorsoundvalue", value ? 1 : 0);
-        }
+        public static SunBoolPref BgSoundValue { get; private set; }
+        public static SunBoolPref ActorSoundValue { get; private set; }
+        
+        //
+        [field: FoldoutGroup("Sounds"), SerializeField] public List<Sound> Sounds { get; set; }
+        
+        //
+        private Tweener _tweenPlayBackgroundSound;
 
         #endregion
 
@@ -82,95 +107,68 @@ namespace HAU_VR_Cardboard.Scripts.Manager
         //
         protected override void LoadInAwake()
         {
-            //
-            if (!PlayerPrefs.HasKey("Audio_backgroundsoundvalue")) BackgroundSoundValue = true;
-            if (!PlayerPrefs.HasKey("Audio_fxsoundvalue")) FXSoundValue = true;
-            if (!PlayerPrefs.HasKey("Audio_actorsoundvalue")) ActorSoundValue = true;
+            BgSoundValue = new SunBoolPref("Audio_BGSoundValue", true);
+            ActorSoundValue = new SunBoolPref("Audio_UXSoundValue", true);
+            BgSoundValue.FirstCheck();
+            ActorSoundValue.FirstCheck();
+            BgSoundValue.SetupSetEvent(true, SunEventID.Audio_BGSound);
+            ActorSoundValue.SetupSetEvent(true, SunEventID.Audio_ActorSound);
             
             //
-            ListAudioControl = new List<AudioControl>();
-            
-            //
-            foreach (var audioConfig in AudioConfigValue.Instance.ListAudioConfig)
+            foreach (var sound in Sounds)
             {
-                var newAudioSource = new GameObject($"Audio {audioConfig.ClipName}");
-                newAudioSource.transform.SetParent(transform);
-                var audioSource = newAudioSource.AddComponent<AudioSource>();
-
-                var newAudioControl = new AudioControl();
-                newAudioControl.Initialize(audioConfig, audioSource);
-
-                ListAudioControl.Add(newAudioControl);
-            }
-            
-            //
-            SetAudioVolume(AudioGroupType.BackgroundSound);
-            SetAudioVolume(AudioGroupType.FXSound);
-            SetAudioVolume(AudioGroupType.ActorSound);
-            
-            //
-            foreach (var audioControl in ListAudioControl)
-            {
-                if (audioControl.AudioConfig.PlayOnAwake)
+                var go = new GameObject(sound.ClipName);
+                go.transform.SetParent(transform);
+                sound.InitializeSource(go.AddComponent<AudioSource>());
+                if (sound.PlayOnAwake && (sound.AudioGroup == AudioGroupType.BgSound ? BgSoundValue.GetValue() : ActorSoundValue.GetValue()))
                 {
-                    audioControl.Play();
+                    sound.Play();
                 }
             }
+            
+            //
+            SunEventManager.StartListening(SunEventID.Audio_BGSound, OnBGSoundValueChange);
         }
-        
-        //
-        public void SetAudioVolume(AudioGroupType type)
-        {
-            foreach (var audioControl in ListAudioControl)
-            {
-                if (audioControl.AudioConfig.AudioGroupType == type)
-                {
-                    var volumeValue = 0f;
-                    switch (type)
-                    {
-                        case AudioGroupType.BackgroundSound:
-                            volumeValue = BackgroundSoundValue ? audioControl.AudioConfig.VolumeClip : 0;
-                            break;
-                        case AudioGroupType.FXSound:
-                            volumeValue = FXSoundValue ? audioControl.AudioConfig.VolumeClip : 0;
-                            break;
-                        case AudioGroupType.ActorSound:
-                            volumeValue = ActorSoundValue ? audioControl.AudioConfig.VolumeClip : 0;
-                            break;
-                    }
-                    audioControl.AudioSource.volume = volumeValue;
-                }
-            }
-        }
-        
+
         //
         public void PlayActorSound(string nameClip)
         {
-            foreach (var audioControl in ListAudioControl)
+            if (!ActorSoundValue.GetValue()) return;
+            foreach (var sound in Sounds)
             {
-                if (audioControl.AudioConfig.AudioGroupType == AudioGroupType.ActorSound)
+                if (sound.AudioGroup == AudioGroupType.ActorSound)
                 {
-                    if (audioControl.AudioConfig.ClipName == nameClip)
-                    {
-                        audioControl.Play();
-                    }
+                    if (sound.ClipName.Contains(nameClip))
+                        sound.Play();
                     else
-                    {
-                        audioControl.Stop();
-                    }
+                        sound.Stop();
                 }
-                
+            }
+        }
+        
+        //
+        public void StopActorSound(string nameClip)
+        {
+            if (!ActorSoundValue.GetValue()) return;
+            foreach (var sound in Sounds)
+            {
+                if (sound.AudioGroup == AudioGroupType.ActorSound)
+                {
+                    if (sound.ClipName.Contains(nameClip))
+                        sound.Stop();
+                }
             }
         }
         
         //
         public void PlaySound(string nameClip)
         {
-            foreach (var audioControl in ListAudioControl)
+            if (!BgSoundValue.GetValue()) return;
+            foreach (var sound in Sounds)
             {
-                if (audioControl.AudioConfig.ClipName == nameClip)
+                if (sound.ClipName.Contains(nameClip))
                 {
-                    audioControl.Play();
+                    sound.Play();
                     return;
                 }
             }
@@ -179,11 +177,12 @@ namespace HAU_VR_Cardboard.Scripts.Manager
         //
         public void StopSound(string nameClip)
         {
-            foreach (var audioControl in ListAudioControl)
+            if (!BgSoundValue.GetValue()) return;
+            foreach (var sound in Sounds)
             {
-                if (audioControl.AudioConfig.ClipName == nameClip)
+                if (sound.ClipName.Contains(nameClip))
                 {
-                    audioControl.Stop();
+                    sound.Stop();
                     return;
                 }
             }
@@ -192,15 +191,43 @@ namespace HAU_VR_Cardboard.Scripts.Manager
         //
         public float DurationSound(string nameClip)
         {
-            foreach (var audioControl in ListAudioControl)
+            foreach (var sound in Sounds)
             {
-                if (audioControl.AudioConfig.ClipName == nameClip)
+                if (sound.ClipName.Contains(nameClip))
                 {
-                    return audioControl.AudioSource.clip.length;
+                    return sound.Clip.length;
                 }
             }
 
             return -1f;
+        }
+
+        #endregion
+
+        #region Event callbacks
+
+        //
+        private void OnBGSoundValueChange(object sender)
+        {
+            var bgSound = Sounds.Find(o => o.ClipName.Contains("Background Sound"));
+            if (BgSoundValue.GetValue())
+            {
+                _tweenPlayBackgroundSound?.Kill();
+                var currentValue = 0f;
+                var endValue = 1f;
+                _tweenPlayBackgroundSound = DOTween.To(() => currentValue, x => currentValue = x, endValue, .25f)
+                    .OnStart(() => bgSound.Play())
+                    .OnUpdate(() => bgSound.SetVolume(currentValue));
+            }
+            else
+            {
+                _tweenPlayBackgroundSound?.Kill();
+                var currentValue = 1f;
+                var endValue = 0f;
+                _tweenPlayBackgroundSound = DOTween.To(() => currentValue, x => currentValue = x, endValue, .25f)
+                    .OnUpdate(() => bgSound.SetVolume(currentValue))
+                    .OnComplete(() => bgSound.Stop());
+            }
         }
 
         #endregion

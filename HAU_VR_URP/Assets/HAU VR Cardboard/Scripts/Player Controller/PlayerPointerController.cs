@@ -1,5 +1,4 @@
-﻿using HAU_VR_Cardboard.Scripts.Scriptables;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace HAU_VR_Cardboard.Scripts.Player_Controller
@@ -56,7 +55,9 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         private void Update()
         {
             if (!_isInitialized) return;
-            
+
+            if (Physics.Raycast(transform.position, transform.forward, out _raycastHit, PlayerConfigValue.Instance.MaxDistanceRay, PlayerConfigValue.Instance.LayerMaskBlockRay)) return;
+
             if (_currentDelayTimer > 0)
             {
                 _currentDelayTimer -= Time.deltaTime;

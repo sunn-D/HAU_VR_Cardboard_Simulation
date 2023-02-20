@@ -1,5 +1,4 @@
-﻿using HAU_VR_Cardboard.Scripts.Scriptables;
-using Sirenix.OdinInspector;
+﻿using Sirenix.OdinInspector;
 using Sun_Package;
 using UnityEngine;
 
@@ -30,9 +29,9 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
             PointerController.Initialize();
             
             //
-            SunEventManager.StartListening(EventID.Teleport_OnTeleportPlayer, OnTeleportPlayer);  
-            SunEventManager.StartListening(EventID.Screen_FadedIn, OnScreenFadeIn);
-            SunEventManager.StartListening(EventID.Screen_FadedOut, OnScreenFadeOut);
+            SunEventManager.StartListening(SunEventID.Teleport_TeleportPlayer, OnTeleportPlayer);  
+            SunEventManager.StartListening(SunEventID.Screen_FadedIn, OnScreenFadeIn);
+            SunEventManager.StartListening(SunEventID.Screen_FadedOut, OnScreenFadeOut);
         }
 
         #endregion
@@ -40,20 +39,20 @@ namespace HAU_VR_Cardboard.Scripts.Player_Controller
         #region Events
 
         //
-        private void OnTeleportPlayer()
+        private void OnTeleportPlayer(object sender)
         {
-            var newPosition = (Vector3)SunEventManager.GetSender(EventID.Teleport_OnTeleportPlayer);
+            var newPosition = (Vector3)sender;
             transform.position = newPosition;  
         }
 
         //
-        private void OnScreenFadeIn()
+        private void OnScreenFadeIn(object sender)
         {
             PointerController.SmoothFade.FadeIn();
         }
 
         //
-        private void OnScreenFadeOut()
+        private void OnScreenFadeOut(object sender)
         {
             PointerController.SmoothFade.FadeOut();
         }

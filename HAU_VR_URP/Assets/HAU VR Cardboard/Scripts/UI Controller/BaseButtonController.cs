@@ -40,7 +40,6 @@ namespace HAU_VR_Cardboard.Scripts.UI_Controller
         {
             _tweenColorButton?.Kill();
             _tweenColorButton = ImageButton.DOColor(PointEnterColor, .25f);
-            Debug.Log("Enter");
         }
 
         //
@@ -54,7 +53,6 @@ namespace HAU_VR_Cardboard.Scripts.UI_Controller
         {
             _tweenColorButton?.Kill();
             _tweenColorButton = ImageButton.DOColor(NormalColor, .25f);
-            Debug.Log("Exit");
         }
 
         #endregion

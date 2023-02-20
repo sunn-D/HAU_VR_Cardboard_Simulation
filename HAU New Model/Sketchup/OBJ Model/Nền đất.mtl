@@ -1,0 +1,16 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl t_i_xu_ng__1_
+Ka 0.000000 0.000000 0.000000
+Kd 0.341176 0.341176 0.341176
+Ks 0.330000 0.330000 0.330000
+map_Kd Nền đất/t_i_xu_ng__1_.jpg
+
+newmtl map_gach_lat_via_he_terrazzo
+Ka 0.000000 0.000000 0.000000
+Kd 0.635294 0.627451 0.596078
+Ks 0.330000 0.330000 0.330000
+map_Kd Nền đất/map_gach_lat_via_he_terrazzo.jpg
+

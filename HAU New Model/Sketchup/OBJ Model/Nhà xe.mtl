@@ -1,0 +1,38 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl wall__56_
+Ka 0.000000 0.000000 0.000000
+Kd 0.400000 0.356863 0.329412
+Ks 0.330000 0.330000 0.330000
+map_Kd Nhà xe/wall__56_.jpg
+
+newmtl op__46_
+Ka 0.000000 0.000000 0.000000
+Kd 0.235294 0.231373 0.211765
+Ks 0.330000 0.330000 0.330000
+map_Kd Nhà xe/op__46_.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Formica_Standard_Lam_180fx_3461_Black_Fossilstone_48x96
+Ka 0.000000 0.000000 0.000000
+Kd 0.180392 0.184314 0.176471
+Ks 0.330000 0.330000 0.330000
+map_Kd Nhà xe/Formica_Standard_Lam_180fx_3461_Black_Fossilstone_48x96.jpg
+
+newmtl Color_M06
+Ka 0.000000 0.000000 0.000000
+Kd 0.337255 0.337255 0.337255
+Ks 0.330000 0.330000 0.330000
+
+newmtl Translucent_Glass_Blue
+Ka 0.000000 0.000000 0.000000
+Kd 0.392157 0.584314 0.929412
+Ks 0.330000 0.330000 0.330000
+d 0.950000
+
